@@ -27,15 +27,15 @@ class Database():
                                                                 );""")        
         self.connection.commit()
 
-    def listar_Tarefas(self) -> list:
+    def listar_Tarefas(self,dia) -> list:
 
         cursor = self.connection.cursor()
 
-        #try:
-        cursor.execute(f"SELECT * FROM tarefas ORDER BY date")
-        print(cursor.fetchall())
-        #except:
-         #   raise ValueError("Erro ao listar tarefas")
+        try:
+            cursor.execute(f"SELECT * FROM tarefas WHERE date LIKE {dia}")
+            return cursor.fetchall()
+        except:
+            raise ValueError("Erro ao listar tarefas")
 
     def insere_Tarefa(self,tarefas) -> bool:
         cursor = self.connection.cursor()
@@ -48,11 +48,6 @@ class Database():
         except:
             return False
 
-    def consulta(self):
-        cursor = self.connection.cursor()
-
-        cursor.execute(f"SELECT tarefa FROM tarefas WHERE data LIKE '2022-01-09%'")
-        return cursor.fetchall()
 
 
 
