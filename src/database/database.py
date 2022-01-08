@@ -31,13 +31,13 @@ class Database():
 
         cursor = self.connection.cursor()
 
-        try:
-            cursor.execute(f"SELECT * FROM tarefas ORDER BY date")
-            print(cursor.fetchall())
-        except:
-            raise ValueError("Erro ao listar tarefas")
+        #try:
+        cursor.execute(f"SELECT * FROM tarefas ORDER BY date")
+        print(cursor.fetchall())
+        #except:
+         #   raise ValueError("Erro ao listar tarefas")
 
-    def insere_Tarefa(self,tarefas) ->  bool:
+    def insere_Tarefa(self,tarefas) -> bool:
         cursor = self.connection.cursor()
 
         try:
@@ -48,14 +48,17 @@ class Database():
         except:
             return False
 
+    def consulta(self):
+        cursor = self.connection.cursor()
 
+        cursor.execute(f"SELECT tarefa FROM tarefas WHERE data LIKE '2022-01-09%'")
+        return cursor.fetchall()
 
 
 
 
 '''bd = Database()
 bd.connect()
-bd.criar_Tabela()
-bd.insere_Tarefa(tarefa)
 bd.listar_Tarefas()
+
 bd.close()'''

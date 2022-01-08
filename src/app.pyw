@@ -28,7 +28,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.pbhome.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpghome))
         self.pbhome.clicked.connect(self.home)
 
-        self.pbtarefas.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgtarefas))
+        self.pbtarefas.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgtarefasdiarias))
         self.pbtarefas.clicked.connect(self.tarefas)
 
         self.pbcontas.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgcontas))

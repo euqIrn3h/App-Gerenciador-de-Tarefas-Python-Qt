@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>573</width>
+    <width>530</width>
     <height>520</height>
    </rect>
   </property>
@@ -77,6 +77,9 @@ color:rgb(0,0,0);
            <bold>true</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string>HOME</string>
          </property>
@@ -89,6 +92,9 @@ color:rgb(0,0,0);
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>TAREFAS DIÁRIAS</string>
@@ -286,11 +292,27 @@ border-color:grey;</string>
              <string notr="true">background-color: rgb(211, 211, 211);</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="mainpghome">
              <property name="styleSheet">
-              <string notr="true">color: rgb(0, 0, 0);
+              <string notr="true">*{
+color:black;
+}
+
+QPushButton{
+background-color: rgb(0, 0, 0);
+background-color:rgb(150,150,150);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}
 </string>
              </property>
              <layout class="QGridLayout" name="gridLayout">
@@ -679,7 +701,7 @@ border-color:grey;</string>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="mainpgtarefas">
+            <widget class="QWidget" name="mainpgtarefasdiarias">
              <property name="styleSheet">
               <string notr="true">*{
 color:black;
@@ -702,663 +724,7 @@ color:rgb(0,0,0)
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_5">
               <item>
-               <widget class="QFrame" name="maintarefasframehorario">
-                <property name="minimumSize">
-                 <size>
-                  <width>80</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>80</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <widget class="QPushButton" name="maintarefaspb00_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>24</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>00:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb02_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>53</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>02:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb04_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>82</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>04:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb06_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>111</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>06:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb07_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>126</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>07:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb10_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>170</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>10:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb12_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>199</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>12:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb14_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>228</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>14:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb16_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>257</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>16:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb17_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>272</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>17:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb18_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>286</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>18:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb20_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>315</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>20:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb23_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>359</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>23:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb21_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>330</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>21:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb19_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>301</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>19:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb15_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>242</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>15:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb05_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>97</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>05:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainpgtarefaspb03_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>68</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>03:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb01_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>39</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>01:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb13_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>213</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>13:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb11_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>184</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>11;00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb09_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>155</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>09:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb08_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>141</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>08:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="maintarefaspb22_00">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>344</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>22:00</string>
-                 </property>
-                </widget>
-                <widget class="QLabel" name="label_12">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>80</width>
-                   <height>20</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Horário</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="maintarefasframetarefa">
+               <widget class="QFrame" name="maintarefasdiariasframetarefa">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1367,14 +733,42 @@ color:rgb(0,0,0)
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_5">
                  <item>
-                  <widget class="QTextEdit" name="maintarefastextedit">
+                  <widget class="QLabel" name="maintarefasdiariaslbl">
+                   <property name="minimumSize">
+                    <size>
+                     <width>25</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgba(190, 190, 190, 234);
+border:solid;
+border-width:1px;
+</string>
+                   </property>
+                   <property name="text">
+                    <string>dia</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="maintarefasdiariastab">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="maintarefaspbtarefaconcluida">
+                  <widget class="QPushButton" name="maintarefasdiariaspbtarefaconcluida">
                    <property name="text">
                     <string>Tarefa concluída</string>
                    </property>
@@ -1385,7 +779,27 @@ color:rgb(0,0,0)
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="mainpgcontas">
+            <widget class="QWidget" name="mainpggastos">
+             <property name="styleSheet">
+              <string notr="true">*{
+color:black;
+}
+
+QPushButton{
+background-color: rgb(0, 0, 0);
+background-color:rgb(150,150,150);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}
+</string>
+             </property>
              <widget class="QTableWidget" name="tableWidget">
               <property name="geometry">
                <rect>
@@ -1402,18 +816,126 @@ color:rgb(0,0,0)
             </widget>
             <widget class="QWidget" name="mainpgcalendario">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">*{
+color:black;
+}
+
+QPushButton{
+background-color: rgb(0, 0, 0);
+background-color:rgb(150,150,150);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}
+</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <widget class="QCalendarWidget" name="calendarWidget">
-                <property name="styleSheet">
-                 <string notr="true">
-background-color:rgb(255,255,255);
-color:black;
-
-</string>
+               <widget class="QFrame" name="frame_4">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
                 </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QCalendarWidget" name="calendarWidget">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:solid;
+border-width:1px;
+border-color:black;</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="mainpgtarefas">
+             <property name="styleSheet">
+              <string notr="true">*{
+color:black;
+}
+
+QPushButton{
+background-color: rgb(0, 0, 0);
+background-color:rgb(150,150,150);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}
+</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="QFrame" name="maintarefasframe">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_12">
+                 <item>
+                  <widget class="QLabel" name="maintarefaslbl">
+                   <property name="minimumSize">
+                    <size>
+                     <width>25</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgba(190, 190, 190, 234);
+color: rgb(0, 0, 0);
+border:solid;
+border-width:1px;
+</string>
+                   </property>
+                   <property name="text">
+                    <string>DIA</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="maintarefastab">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="maintarefaspbcadastrar">
+                   <property name="text">
+                    <string>PushButton</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -1439,18 +961,18 @@ color:rgb(0,0,0)
 
 </string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
                <widget class="QFrame" name="mainctarefasframehorario_2">
                 <property name="minimumSize">
                  <size>
-                  <width>80</width>
-                  <height>0</height>
+                  <width>0</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>80</width>
+                  <width>10000000</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -1460,640 +982,43 @@ color:rgb(0,0,0)
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QPushButton" name="mainctarefaspb00_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>24</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>00:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb02_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>53</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>02:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb04_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>82</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>04:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb06_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>111</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>06:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb07_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>126</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>07:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb10_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>170</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>10:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb12_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>199</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>12:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb14_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>228</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>14:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb16_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>257</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>16:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb17_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>272</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>17:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb18_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>286</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>18:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb20_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>315</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>20:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb23_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>359</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>23:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb21_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>330</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>21:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb19_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>301</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>19:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb15_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>242</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>15:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb05_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>97</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>05:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb03_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>68</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>03:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb01_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>39</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>01:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb13_2">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>213</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>13:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb11_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>184</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>11;00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb09_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>155</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>09:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb08_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>141</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>08:00</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="mainctarefaspb22_1">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>344</y>
-                   <width>80</width>
-                   <height>16</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>16</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>22:00</string>
-                 </property>
-                </widget>
-                <widget class="QLabel" name="mainctarefaslblhorario">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>80</width>
-                   <height>20</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Horário</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="mainctarefaslblhorario">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Horário</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTimeEdit" name="mainctarefaslblhorariotimeEdit">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -2106,13 +1031,9 @@ color:rgb(0,0,0)
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_6">
                  <item>
-                  <widget class="QPlainTextEdit" name="maincadastrartarefatextedit">
+                  <widget class="QTextEdit" name="maincadastrartarefatextedit">
                    <property name="styleSheet">
-                    <string notr="true">
-background-color:rgb(255,255,255);
-color:black;
-
-</string>
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
                    </property>
                   </widget>
                  </item>
@@ -2161,16 +1082,6 @@ color:black;
                    </property>
                    <property name="text">
                     <string>Secundária</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="maincadastrartarefacombob">
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
                    </property>
                   </widget>
                  </item>
