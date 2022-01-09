@@ -6,6 +6,7 @@ import sys
 import datetime
 from api import *
 import sqlite3 as sq
+from database.database import *
 
 class MainJanela(Ui_ToDo,QMainWindow):
     def __init__(self) -> None:
@@ -31,7 +32,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.pbtarefas.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgtarefasdiarias))
         self.pbtarefas.clicked.connect(self.tarefas)
 
-        self.pbcontas.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgcontas))
+        self.pbgastos.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpggastos))
         self.pbcalendario.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgcalendario))
 
     def setHeader(self):
@@ -69,10 +70,26 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.mainhometaressencialconluida.setText("")
 
     def tarefas(self):
-        pass
+        db = Database()
+        db.connect()
+        tarefas = db.listar_Tarefas('2022-01-20')#str(datetime.date.today())
+        
+        self.maintarefasdiariastab.setColumnCount(1)
+        self.maintarefasdiariastab.setHorizontalHeaderItem(0,QTableWidgetItem('Tarefa Diária'))
+        self.maintarefasdiariastab.setColumnWidth(0,self.maintarefasdiariastab.width()-40)
+        self.maintarefasdiariastab.setRowCount(len(tarefas))
+        
 
+        for i in range(len(tarefas)):
+            tarefa=QTextEdit()
+            tarefa.setReadOnly(True)
+            tarefa.setText(tarefas[i][1])
+
+            self.maintarefasdiariastab.setVerticalHeaderItem(i,QTableWidgetItem(tarefas[i][0][11:]))
+            self.maintarefasdiariastab.setCellWidget(i,0,tarefa)
+
+        
 if __name__ == "__main__":
-
     
     app = QApplication(sys.argv)
     window = MainJanela()

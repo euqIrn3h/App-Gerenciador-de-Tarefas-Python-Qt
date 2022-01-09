@@ -85,11 +85,11 @@ class Ui_ToDo(object):
 
         self.verticalLayout.addWidget(self.pbtarefas)
 
-        self.pbcontas = QPushButton(self.lcontainer)
-        self.pbcontas.setObjectName(u"pbcontas")
-        self.pbcontas.setFont(font)
+        self.pbgastos = QPushButton(self.lcontainer)
+        self.pbgastos.setObjectName(u"pbgastos")
+        self.pbgastos.setFont(font)
 
-        self.verticalLayout.addWidget(self.pbcontas)
+        self.verticalLayout.addWidget(self.pbgastos)
 
         self.pbcalendario = QPushButton(self.lcontainer)
         self.pbcalendario.setObjectName(u"pbcalendario")
@@ -175,7 +175,23 @@ class Ui_ToDo(object):
         self.mainpages.setStyleSheet(u"background-color: rgb(211, 211, 211);")
         self.mainpghome = QWidget()
         self.mainpghome.setObjectName(u"mainpghome")
-        self.mainpghome.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.mainpghome.setStyleSheet(u"*{\n"
+"color:black;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color:rgb(150,150,150);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}\n"
 "")
         self.gridLayout = QGridLayout(self.mainpghome)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -380,173 +396,84 @@ class Ui_ToDo(object):
 "")
         self.horizontalLayout_5 = QHBoxLayout(self.mainpgtarefasdiarias)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.maintarefasframehorario = QFrame(self.mainpgtarefasdiarias)
-        self.maintarefasframehorario.setObjectName(u"maintarefasframehorario")
-        self.maintarefasframehorario.setMinimumSize(QSize(80, 0))
-        self.maintarefasframehorario.setMaximumSize(QSize(80, 16777215))
-        self.maintarefasframehorario.setFrameShape(QFrame.StyledPanel)
-        self.maintarefasframehorario.setFrameShadow(QFrame.Raised)
-        self.maintarefaspb00_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb00_00.setObjectName(u"maintarefaspb00_00")
-        self.maintarefaspb00_00.setGeometry(QRect(0, 24, 80, 16))
-        self.maintarefaspb00_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb00_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb02_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb02_00.setObjectName(u"maintarefaspb02_00")
-        self.maintarefaspb02_00.setGeometry(QRect(0, 53, 80, 16))
-        self.maintarefaspb02_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb02_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb04_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb04_00.setObjectName(u"maintarefaspb04_00")
-        self.maintarefaspb04_00.setGeometry(QRect(0, 82, 80, 16))
-        self.maintarefaspb04_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb04_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb06_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb06_00.setObjectName(u"maintarefaspb06_00")
-        self.maintarefaspb06_00.setGeometry(QRect(0, 111, 80, 16))
-        self.maintarefaspb06_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb06_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb07_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb07_00.setObjectName(u"maintarefaspb07_00")
-        self.maintarefaspb07_00.setGeometry(QRect(0, 126, 80, 16))
-        self.maintarefaspb07_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb07_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb10_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb10_00.setObjectName(u"maintarefaspb10_00")
-        self.maintarefaspb10_00.setGeometry(QRect(0, 170, 80, 16))
-        self.maintarefaspb10_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb10_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb12_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb12_00.setObjectName(u"maintarefaspb12_00")
-        self.maintarefaspb12_00.setGeometry(QRect(0, 199, 80, 16))
-        self.maintarefaspb12_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb12_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb14_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb14_00.setObjectName(u"maintarefaspb14_00")
-        self.maintarefaspb14_00.setGeometry(QRect(0, 228, 80, 16))
-        self.maintarefaspb14_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb14_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb16_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb16_00.setObjectName(u"maintarefaspb16_00")
-        self.maintarefaspb16_00.setGeometry(QRect(0, 257, 80, 16))
-        self.maintarefaspb16_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb16_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb17_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb17_00.setObjectName(u"maintarefaspb17_00")
-        self.maintarefaspb17_00.setGeometry(QRect(0, 272, 80, 16))
-        self.maintarefaspb17_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb17_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb18_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb18_00.setObjectName(u"maintarefaspb18_00")
-        self.maintarefaspb18_00.setGeometry(QRect(0, 286, 80, 16))
-        self.maintarefaspb18_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb18_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb20_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb20_00.setObjectName(u"maintarefaspb20_00")
-        self.maintarefaspb20_00.setGeometry(QRect(0, 315, 80, 16))
-        self.maintarefaspb20_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb20_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb23_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb23_00.setObjectName(u"maintarefaspb23_00")
-        self.maintarefaspb23_00.setGeometry(QRect(0, 359, 80, 16))
-        self.maintarefaspb23_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb23_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb21_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb21_00.setObjectName(u"maintarefaspb21_00")
-        self.maintarefaspb21_00.setGeometry(QRect(0, 330, 80, 16))
-        self.maintarefaspb21_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb21_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb19_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb19_00.setObjectName(u"maintarefaspb19_00")
-        self.maintarefaspb19_00.setGeometry(QRect(0, 301, 80, 16))
-        self.maintarefaspb19_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb19_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb15_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb15_00.setObjectName(u"maintarefaspb15_00")
-        self.maintarefaspb15_00.setGeometry(QRect(0, 242, 80, 16))
-        self.maintarefaspb15_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb15_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb05_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb05_00.setObjectName(u"maintarefaspb05_00")
-        self.maintarefaspb05_00.setGeometry(QRect(0, 97, 80, 16))
-        self.maintarefaspb05_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb05_00.setMaximumSize(QSize(80, 16777215))
-        self.mainpgtarefaspb03_00 = QPushButton(self.maintarefasframehorario)
-        self.mainpgtarefaspb03_00.setObjectName(u"mainpgtarefaspb03_00")
-        self.mainpgtarefaspb03_00.setGeometry(QRect(0, 68, 80, 16))
-        self.mainpgtarefaspb03_00.setMinimumSize(QSize(0, 16))
-        self.mainpgtarefaspb03_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb01_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb01_00.setObjectName(u"maintarefaspb01_00")
-        self.maintarefaspb01_00.setGeometry(QRect(0, 39, 80, 16))
-        self.maintarefaspb01_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb01_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb13_1 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb13_1.setObjectName(u"maintarefaspb13_1")
-        self.maintarefaspb13_1.setGeometry(QRect(0, 213, 80, 16))
-        self.maintarefaspb13_1.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb13_1.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb11_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb11_00.setObjectName(u"maintarefaspb11_00")
-        self.maintarefaspb11_00.setGeometry(QRect(0, 184, 80, 16))
-        self.maintarefaspb11_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb11_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb09_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb09_00.setObjectName(u"maintarefaspb09_00")
-        self.maintarefaspb09_00.setGeometry(QRect(0, 155, 80, 16))
-        self.maintarefaspb09_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb09_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb08_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb08_00.setObjectName(u"maintarefaspb08_00")
-        self.maintarefaspb08_00.setGeometry(QRect(0, 141, 80, 16))
-        self.maintarefaspb08_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb08_00.setMaximumSize(QSize(80, 16777215))
-        self.maintarefaspb22_00 = QPushButton(self.maintarefasframehorario)
-        self.maintarefaspb22_00.setObjectName(u"maintarefaspb22_00")
-        self.maintarefaspb22_00.setGeometry(QRect(0, 344, 80, 16))
-        self.maintarefaspb22_00.setMinimumSize(QSize(0, 16))
-        self.maintarefaspb22_00.setMaximumSize(QSize(80, 16777215))
-        self.label_12 = QLabel(self.maintarefasframehorario)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setGeometry(QRect(0, 0, 80, 20))
-        self.label_12.setMinimumSize(QSize(0, 20))
-        self.label_12.setMaximumSize(QSize(80, 20))
-        self.label_12.setFont(font)
-        self.label_12.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_5.addWidget(self.maintarefasframehorario)
-
-        self.maintarefasframetarefa = QFrame(self.mainpgtarefasdiarias)
-        self.maintarefasframetarefa.setObjectName(u"maintarefasframetarefa")
-        self.maintarefasframetarefa.setFrameShape(QFrame.StyledPanel)
-        self.maintarefasframetarefa.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.maintarefasframetarefa)
+        self.maintarefasdiariasframetarefa = QFrame(self.mainpgtarefasdiarias)
+        self.maintarefasdiariasframetarefa.setObjectName(u"maintarefasdiariasframetarefa")
+        self.maintarefasdiariasframetarefa.setFrameShape(QFrame.StyledPanel)
+        self.maintarefasdiariasframetarefa.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.maintarefasdiariasframetarefa)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.maintarefastextedit = QTextEdit(self.maintarefasframetarefa)
-        self.maintarefastextedit.setObjectName(u"maintarefastextedit")
-        self.maintarefastextedit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.maintarefasdiariaslbl = QLabel(self.maintarefasdiariasframetarefa)
+        self.maintarefasdiariaslbl.setObjectName(u"maintarefasdiariaslbl")
+        self.maintarefasdiariaslbl.setMinimumSize(QSize(25, 20))
+        self.maintarefasdiariaslbl.setFont(font)
+        self.maintarefasdiariaslbl.setStyleSheet(u"background-color: rgba(190, 190, 190, 234);\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"")
+        self.maintarefasdiariaslbl.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_5.addWidget(self.maintarefastextedit)
+        self.verticalLayout_5.addWidget(self.maintarefasdiariaslbl)
 
-        self.maintarefaspbtarefaconcluida = QPushButton(self.maintarefasframetarefa)
-        self.maintarefaspbtarefaconcluida.setObjectName(u"maintarefaspbtarefaconcluida")
+        self.maintarefasdiariastab = QTableWidget(self.maintarefasdiariasframetarefa)
+        self.maintarefasdiariastab.setObjectName(u"maintarefasdiariastab")
+        self.maintarefasdiariastab.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_5.addWidget(self.maintarefaspbtarefaconcluida)
+        self.verticalLayout_5.addWidget(self.maintarefasdiariastab)
+
+        self.maintarefasdiariaspbtarefaconcluida = QPushButton(self.maintarefasdiariasframetarefa)
+        self.maintarefasdiariaspbtarefaconcluida.setObjectName(u"maintarefasdiariaspbtarefaconcluida")
+
+        self.verticalLayout_5.addWidget(self.maintarefasdiariaspbtarefaconcluida)
 
 
-        self.horizontalLayout_5.addWidget(self.maintarefasframetarefa)
+        self.horizontalLayout_5.addWidget(self.maintarefasdiariasframetarefa)
 
         self.mainpages.addWidget(self.mainpgtarefasdiarias)
-        self.mainpgcontas = QWidget()
-        self.mainpgcontas.setObjectName(u"mainpgcontas")
-        self.tableWidget = QTableWidget(self.mainpgcontas)
+        self.mainpggastos = QWidget()
+        self.mainpggastos.setObjectName(u"mainpggastos")
+        self.mainpggastos.setStyleSheet(u"*{\n"
+"color:black;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color:rgb(150,150,150);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}\n"
+"")
+        self.tableWidget = QTableWidget(self.mainpggastos)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(70, 70, 256, 192))
         self.tableWidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.mainpages.addWidget(self.mainpgcontas)
+        self.mainpages.addWidget(self.mainpggastos)
         self.mainpgcalendario = QWidget()
         self.mainpgcalendario.setObjectName(u"mainpgcalendario")
-        self.mainpgcalendario.setStyleSheet(u"")
+        self.mainpgcalendario.setStyleSheet(u"*{\n"
+"color:black;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color:rgb(150,150,150);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}\n"
+"")
         self.verticalLayout_7 = QVBoxLayout(self.mainpgcalendario)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.frame_4 = QFrame(self.mainpgcalendario)
@@ -571,11 +498,59 @@ class Ui_ToDo(object):
         self.mainpages.addWidget(self.mainpgcalendario)
         self.mainpgtarefas = QWidget()
         self.mainpgtarefas.setObjectName(u"mainpgtarefas")
-        self.frame_5 = QFrame(self.mainpgtarefas)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setGeometry(QRect(60, 30, 231, 331))
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.mainpgtarefas.setStyleSheet(u"*{\n"
+"color:black;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color:rgb(150,150,150);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}\n"
+"")
+        self.verticalLayout_11 = QVBoxLayout(self.mainpgtarefas)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.maintarefasframe = QFrame(self.mainpgtarefas)
+        self.maintarefasframe.setObjectName(u"maintarefasframe")
+        self.maintarefasframe.setFrameShape(QFrame.StyledPanel)
+        self.maintarefasframe.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.maintarefasframe)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.maintarefaslbl = QLabel(self.maintarefasframe)
+        self.maintarefaslbl.setObjectName(u"maintarefaslbl")
+        self.maintarefaslbl.setMinimumSize(QSize(25, 20))
+        self.maintarefaslbl.setFont(font)
+        self.maintarefaslbl.setStyleSheet(u"background-color: rgba(190, 190, 190, 234);\n"
+"color: rgb(0, 0, 0);\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"")
+        self.maintarefaslbl.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.maintarefaslbl)
+
+        self.maintarefastab = QTableWidget(self.maintarefasframe)
+        self.maintarefastab.setObjectName(u"maintarefastab")
+        self.maintarefastab.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+
+        self.verticalLayout_12.addWidget(self.maintarefastab)
+
+        self.maintarefaspbcadastrar = QPushButton(self.maintarefasframe)
+        self.maintarefaspbcadastrar.setObjectName(u"maintarefaspbcadastrar")
+
+        self.verticalLayout_12.addWidget(self.maintarefaspbcadastrar)
+
+
+        self.verticalLayout_11.addWidget(self.maintarefasframe)
+
         self.mainpages.addWidget(self.mainpgtarefas)
         self.mainpgcadastrartarefa = QWidget()
         self.mainpgcadastrartarefa.setObjectName(u"mainpgcadastrartarefa")
@@ -709,7 +684,7 @@ class Ui_ToDo(object):
         ToDo.setWindowTitle(QCoreApplication.translate("ToDo", u"ToDo", None))
         self.pbhome.setText(QCoreApplication.translate("ToDo", u"HOME", None))
         self.pbtarefas.setText(QCoreApplication.translate("ToDo", u"TAREFAS DI\u00c1RIAS", None))
-        self.pbcontas.setText(QCoreApplication.translate("ToDo", u"GASTOS", None))
+        self.pbgastos.setText(QCoreApplication.translate("ToDo", u"GASTOS", None))
         self.pbcalendario.setText(QCoreApplication.translate("ToDo", u"CALENDARIO", None))
         self.pbtoogle.setText(QCoreApplication.translate("ToDo", u">>>", None))
         self.headerlblhorario.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
@@ -734,32 +709,10 @@ class Ui_ToDo(object):
         self.mainhometaressencial.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhometaressencialconluida.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.label_9.setText(QCoreApplication.translate("ToDo", u"Percentual de conclus\u00e3o :", None))
-        self.maintarefaspb00_00.setText(QCoreApplication.translate("ToDo", u"00:00", None))
-        self.maintarefaspb02_00.setText(QCoreApplication.translate("ToDo", u"02:00", None))
-        self.maintarefaspb04_00.setText(QCoreApplication.translate("ToDo", u"04:00", None))
-        self.maintarefaspb06_00.setText(QCoreApplication.translate("ToDo", u"06:00", None))
-        self.maintarefaspb07_00.setText(QCoreApplication.translate("ToDo", u"07:00", None))
-        self.maintarefaspb10_00.setText(QCoreApplication.translate("ToDo", u"10:00", None))
-        self.maintarefaspb12_00.setText(QCoreApplication.translate("ToDo", u"12:00", None))
-        self.maintarefaspb14_00.setText(QCoreApplication.translate("ToDo", u"14:00", None))
-        self.maintarefaspb16_00.setText(QCoreApplication.translate("ToDo", u"16:00", None))
-        self.maintarefaspb17_00.setText(QCoreApplication.translate("ToDo", u"17:00", None))
-        self.maintarefaspb18_00.setText(QCoreApplication.translate("ToDo", u"18:00", None))
-        self.maintarefaspb20_00.setText(QCoreApplication.translate("ToDo", u"20:00", None))
-        self.maintarefaspb23_00.setText(QCoreApplication.translate("ToDo", u"23:00", None))
-        self.maintarefaspb21_00.setText(QCoreApplication.translate("ToDo", u"21:00", None))
-        self.maintarefaspb19_00.setText(QCoreApplication.translate("ToDo", u"19:00", None))
-        self.maintarefaspb15_00.setText(QCoreApplication.translate("ToDo", u"15:00", None))
-        self.maintarefaspb05_00.setText(QCoreApplication.translate("ToDo", u"05:00", None))
-        self.mainpgtarefaspb03_00.setText(QCoreApplication.translate("ToDo", u"03:00", None))
-        self.maintarefaspb01_00.setText(QCoreApplication.translate("ToDo", u"01:00", None))
-        self.maintarefaspb13_1.setText(QCoreApplication.translate("ToDo", u"13:00", None))
-        self.maintarefaspb11_00.setText(QCoreApplication.translate("ToDo", u"11:00", None))
-        self.maintarefaspb09_00.setText(QCoreApplication.translate("ToDo", u"09:00", None))
-        self.maintarefaspb08_00.setText(QCoreApplication.translate("ToDo", u"08:00", None))
-        self.maintarefaspb22_00.setText(QCoreApplication.translate("ToDo", u"22:00", None))
-        self.label_12.setText(QCoreApplication.translate("ToDo", u"Hor\u00e1rio", None))
-        self.maintarefaspbtarefaconcluida.setText(QCoreApplication.translate("ToDo", u"Tarefa conclu\u00edda", None))
+        self.maintarefasdiariaslbl.setText(QCoreApplication.translate("ToDo", u"20", None))
+        self.maintarefasdiariaspbtarefaconcluida.setText(QCoreApplication.translate("ToDo", u"Tarefa conclu\u00edda", None))
+        self.maintarefaslbl.setText(QCoreApplication.translate("ToDo", u"DIA", None))
+        self.maintarefaspbcadastrar.setText(QCoreApplication.translate("ToDo", u"PushButton", None))
         self.mainctarefaslblhorario.setText(QCoreApplication.translate("ToDo", u"Hor\u00e1rio", None))
         self.maincadastrartarefarbessencial.setText(QCoreApplication.translate("ToDo", u"Essencial", None))
         self.maincadastrartarefarbimportante.setText(QCoreApplication.translate("ToDo", u"Importante", None))

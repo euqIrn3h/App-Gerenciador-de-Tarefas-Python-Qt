@@ -1,8 +1,11 @@
 import sqlite3
+import os
 
+#Necessário alterar para o diretório do banco de dados para fazer a conexão.
 
 class Database():
     def __init__(self,) -> None:
+        os.chdir('G:\\Meu Drive\\Programas\\Python\\Gerenciador_Tarefas\\src\\database')
         self.name = 'systemtarefas.db'
         
     def connect(self) -> bool:
@@ -32,7 +35,7 @@ class Database():
         cursor = self.connection.cursor()
 
         try:
-            cursor.execute(f"SELECT * FROM tarefas WHERE date LIKE {dia}")
+            cursor.execute(f"SELECT * FROM tarefas WHERE date LIKE '{dia}%'")
             return cursor.fetchall()
         except:
             raise ValueError("Erro ao listar tarefas")
@@ -50,10 +53,8 @@ class Database():
 
 
 
-
-
 '''bd = Database()
 bd.connect()
-bd.listar_Tarefas()
+bd.listar_Tarefas('2022-01-20')
 
 bd.close()'''

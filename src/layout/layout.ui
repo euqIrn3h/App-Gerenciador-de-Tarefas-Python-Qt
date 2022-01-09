@@ -102,7 +102,7 @@ color:rgb(0,0,0);
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pbcontas">
+        <widget class="QPushButton" name="pbgastos">
          <property name="font">
           <font>
            <weight>75</weight>
@@ -292,7 +292,7 @@ border-color:grey;</string>
              <string notr="true">background-color: rgb(211, 211, 211);</string>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="mainpghome">
              <property name="styleSheet">
@@ -737,7 +737,7 @@ color:rgb(0,0,0)
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
-                     <height>0</height>
+                     <height>20</height>
                     </size>
                    </property>
                    <property name="font">
@@ -753,7 +753,7 @@ border-width:1px;
 </string>
                    </property>
                    <property name="text">
-                    <string>dia</string>
+                    <string>20</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -897,7 +897,7 @@ color:rgb(0,0,0)
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
-                     <height>0</height>
+                     <height>20</height>
                     </size>
                    </property>
                    <property name="font">

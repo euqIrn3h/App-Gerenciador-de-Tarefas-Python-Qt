@@ -1,0 +1,8 @@
+#Como navegar até diretórios- Módulo OS
+https://www.pythonprogressivo.net/2018/10/Endereco-Caminho-path-Criar-Arquivo-Diretorio-Pasta-modulo-os.html
+
+#Documentação Qt
+https://doc.qt.io/qt-5/qtwidgets-module.html
+
+#Documentação Sqlite
+https://www.sqlite.org/docs.html
