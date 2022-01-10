@@ -28,7 +28,7 @@ border:none;
 
 
 QPushButton{
-background-color:rgb(150,150,150);
+background-color: rgb(190, 190, 200);
 color:rgb(0,0,0);
 border-style:solid;
 border-width:1px;
@@ -86,7 +86,7 @@ color:rgb(0,0,0);
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pbtarefas">
+        <widget class="QPushButton" name="pbtarefasdiarias">
          <property name="font">
           <font>
            <weight>75</weight>
@@ -160,6 +160,9 @@ color:rgb(0,0,0);
            <height>30</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -208,9 +211,13 @@ color:rgb(0,0,0);
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border:solid;
+             <string notr="true">QLabel{
+border:solid;
 border-width:1px;
-border-color:grey;</string>
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
             </property>
             <property name="text">
              <string>TextLabel</string>
@@ -235,9 +242,13 @@ border-color:grey;</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border:solid;
+             <string notr="true">QLabel{
+border:solid;
 border-width:1px;
-border-color:grey;</string>
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
             </property>
             <property name="text">
              <string>TextLabel</string>
@@ -262,9 +273,13 @@ border-color:grey;</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border:solid;
+             <string notr="true">QLabel{
+border:solid;
 border-width:1px;
-border-color:grey;</string>
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
             </property>
             <property name="text">
              <string>TextLabel</string>
@@ -292,7 +307,7 @@ border-color:grey;</string>
              <string notr="true">background-color: rgb(211, 211, 211);</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="mainpghome">
              <property name="styleSheet">
@@ -422,7 +437,7 @@ color:rgb(0,0,0)
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_5">
+                  <widget class="QLabel" name="label_12">
                    <property name="font">
                     <font>
                      <weight>75</weight>
@@ -431,6 +446,22 @@ color:rgb(0,0,0)
                    </property>
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(190, 190, 200);</string>
+                   </property>
+                   <property name="text">
+                    <string>Tarefas diárias :</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="text">
                     <string>Tarefas concluídas :</string>
@@ -444,6 +475,9 @@ color:rgb(0,0,0)
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(190, 190, 200);</string>
                    </property>
                    <property name="text">
                     <string>Tarefas faltando :</string>
@@ -459,7 +493,7 @@ color:rgb(0,0,0)
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(190, 190, 200);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Tarefas essenciais :</string>
@@ -473,6 +507,9 @@ color:rgb(0,0,0)
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(190, 190, 200);</string>
                    </property>
                    <property name="text">
                     <string>Tarefas essencias concluídas :</string>
@@ -583,7 +620,7 @@ color:rgb(0,0,0)
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QLabel" name="mainhometarconcluida">
+                  <widget class="QLabel" name="mainhometarefasdiarias">
                    <property name="font">
                     <font>
                      <weight>75</weight>
@@ -599,12 +636,31 @@ color:rgb(0,0,0)
                   </widget>
                  </item>
                  <item>
+                  <widget class="QLabel" name="mainhometarconcluida">
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QLabel" name="mainhometarfaltando">
                    <property name="font">
                     <font>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(190, 190, 200);</string>
                    </property>
                    <property name="text">
                     <string>TextLabel</string>
@@ -620,7 +676,7 @@ color:rgb(0,0,0)
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(190, 190, 200);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>TextLabel</string>
@@ -634,6 +690,9 @@ color:rgb(0,0,0)
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(190, 190, 200);</string>
                    </property>
                    <property name="text">
                     <string>TextLabel</string>
@@ -708,8 +767,7 @@ color:black;
 }
 
 QPushButton{
-background-color: rgb(0, 0, 0);
-background-color:rgb(150,150,150);
+background-color: rgb(190, 190, 200);
 color:rgb(0,0,0);
 border-style:solid;
 border-width:1px;
@@ -732,34 +790,6 @@ color:rgb(0,0,0)
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_5">
-                 <item>
-                  <widget class="QLabel" name="maintarefasdiariaslbl">
-                   <property name="minimumSize">
-                    <size>
-                     <width>25</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgba(190, 190, 190, 234);
-border:solid;
-border-width:1px;
-</string>
-                   </property>
-                   <property name="text">
-                    <string>20</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
                  <item>
                   <widget class="QTableWidget" name="maintarefasdiariastab">
                    <property name="styleSheet">
@@ -837,7 +867,7 @@ color:rgb(0,0,0)
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <widget class="QFrame" name="frame_4">
+               <widget class="QFrame" name="maincalendarioframe">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -846,7 +876,7 @@ color:rgb(0,0,0)
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_9">
                  <item>
-                  <widget class="QCalendarWidget" name="calendarWidget">
+                  <widget class="QCalendarWidget" name="maincalendariocalendario">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);
@@ -868,8 +898,7 @@ color:black;
 }
 
 QPushButton{
-background-color: rgb(0, 0, 0);
-background-color:rgb(150,150,150);
+background-color: rgb(190, 190, 200);
 color:rgb(0,0,0);
 border-style:solid;
 border-width:1px;
@@ -893,32 +922,182 @@ color:rgb(0,0,0)
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_12">
                  <item>
-                  <widget class="QLabel" name="maintarefaslbl">
+                  <widget class="QFrame" name="maintarefasframeframe">
                    <property name="minimumSize">
                     <size>
-                     <width>25</width>
-                     <height>20</height>
+                     <width>0</width>
+                     <height>30</height>
                     </size>
                    </property>
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgba(190, 190, 190, 234);
-color: rgb(0, 0, 0);
+                    <string notr="true">QLabe {
+background-color: rgb(190, 190, 200);
+}l</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_2">
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="maintarefaslbldia">
+                      <property name="minimumSize">
+                       <size>
+                        <width>25</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
 border:solid;
 border-width:1px;
-</string>
-                   </property>
-                   <property name="text">
-                    <string>DIA</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QLabel" name="maintarefaslblmaxmin">
+                      <property name="font">
+                       <font>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+border:solid;
+border-width:1px;
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QLabel" name="maintarefaslbldescricao">
+                      <property name="font">
+                       <font>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+border:solid;
+border-width:1px;
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_2">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+border:solid;
+border-width:1px;
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Data</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_13">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+border:solid;
+border-width:1px;
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Máx - Mín</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="label_14">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+border:solid;
+border-width:1px;
+border-color:white;
+background-color: rgb(190, 190, 200);
+color:black;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Clima</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                  <item>
@@ -929,9 +1108,28 @@ border-width:1px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="maintarefaspbcadastrar">
+                  <widget class="QPushButton" name="maintarefaspbalterar">
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
-                    <string>PushButton</string>
+                    <string>Alterar</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="maintarefaspbcadastrar">
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Cadastrar</string>
                    </property>
                   </widget>
                  </item>
@@ -947,7 +1145,7 @@ color:black;
 }
 
 QPushButton{
-background-color:rgb(150,150,150);
+background-color: rgb(190, 190, 200);
 color:rgb(0,0,0);
 border-style:solid;
 border-width:1px;
@@ -958,69 +1156,9 @@ QPushButton:hover{
 background-color:rgb(255,255,255);
 color:rgb(0,0,0)
 }
-
 </string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_10">
-              <item>
-               <widget class="QFrame" name="mainctarefasframehorario_2">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>10000000</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_6">
-                 <item>
-                  <widget class="QLabel" name="mainctarefaslblhorario">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Horário</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QTimeEdit" name="mainctarefaslblhorariotimeEdit">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
               <item>
                <widget class="QFrame" name="mainctarefasframecadastrar">
                 <property name="frameShape">
@@ -1030,6 +1168,81 @@ color:rgb(0,0,0)
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="maincadastrartarefalbdia">
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>DIA</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="mainctarefasframehorario_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>10000000</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                    <item>
+                     <widget class="QLabel" name="mainctarefaslblhorario">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>80</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Horário</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTimeEdit" name="mainctarefaslblhorariotimeEdit">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
                  <item>
                   <widget class="QTextEdit" name="maincadastrartarefatextedit">
                    <property name="styleSheet">
@@ -1054,7 +1267,7 @@ color:rgb(0,0,0)
                   </widget>
                  </item>
                  <item>
-                  <widget class="QRadioButton" name="maincadastrartarefarbimportante">
+                  <widget class="QRadioButton" name="maincadastrartarefarbsecudaria">
                    <property name="font">
                     <font>
                      <weight>75</weight>
@@ -1065,12 +1278,12 @@ color:rgb(0,0,0)
                     <string notr="true">background-color:rgb(255, 200, 155);</string>
                    </property>
                    <property name="text">
-                    <string>Importante</string>
+                    <string>Secundária</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QRadioButton" name="maincadastrartarefarbsecudaria">
+                  <widget class="QRadioButton" name="maincadastrartarefarbimportante">
                    <property name="font">
                     <font>
                      <weight>75</weight>
@@ -1078,10 +1291,13 @@ color:rgb(0,0,0)
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 155);</string>
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="text">
-                    <string>Secundária</string>
+                    <string>Normal</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -1124,7 +1340,7 @@ color:rgb(0,0,0)
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="footerlblassinatura">
             <property name="minimumSize">
              <size>
               <width>0</width>

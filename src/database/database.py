@@ -26,7 +26,9 @@ class Database():
         cursor.execute(f"""CREATE TABLE IF NOT EXISTS tarefas(
                             
                             date DATETIME PRIMARY KEY NOT NULL UNIQUE,
-                            tarefa TEXT                      
+                            tarefa TEXT
+                            prioridade INTEGER
+                            status INTEGER                    
                                                                 );""")        
         self.connection.commit()
 
@@ -35,7 +37,7 @@ class Database():
         cursor = self.connection.cursor()
 
         try:
-            cursor.execute(f"SELECT * FROM tarefas WHERE date LIKE '{dia}%'")
+            cursor.execute(f"SELECT * FROM tarefas WHERE date LIKE '{dia}%' ORDER BY date")
             return cursor.fetchall()
         except:
             raise ValueError("Erro ao listar tarefas")
@@ -45,7 +47,7 @@ class Database():
 
         try:
             for i in range(len(tarefas)):
-                cursor.execute(f"INSERT INTO tarefas (date,tarefa) VALUES('{tarefas[i][0]}','{tarefas[i][1]}')")    
+                cursor.execute(f"INSERT INTO tarefas (date,tarefa,prioridade,status) VALUES('{tarefas[i][0]}','{tarefas[i][1]}','{tarefas[i][2]}','{tarefas[i][3]}')")    
             self.connection.commit()
             return True
         except:
@@ -55,6 +57,6 @@ class Database():
 
 '''bd = Database()
 bd.connect()
-bd.listar_Tarefas('2022-01-20')
+print(bd.listar_Tarefas('2022-01-20'))
 
 bd.close()'''

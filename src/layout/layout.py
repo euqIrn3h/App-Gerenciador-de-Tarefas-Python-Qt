@@ -35,7 +35,7 @@ class Ui_ToDo(object):
 "\n"
 "\n"
 "QPushButton{\n"
-"background-color:rgb(150,150,150);\n"
+"background-color: rgb(190, 190, 200);\n"
 "color:rgb(0,0,0);\n"
 "border-style:solid;\n"
 "border-width:1px;\n"
@@ -78,12 +78,12 @@ class Ui_ToDo(object):
 
         self.verticalLayout.addWidget(self.pbhome)
 
-        self.pbtarefas = QPushButton(self.lcontainer)
-        self.pbtarefas.setObjectName(u"pbtarefas")
-        self.pbtarefas.setFont(font)
-        self.pbtarefas.setStyleSheet(u"")
+        self.pbtarefasdiarias = QPushButton(self.lcontainer)
+        self.pbtarefasdiarias.setObjectName(u"pbtarefasdiarias")
+        self.pbtarefasdiarias.setFont(font)
+        self.pbtarefasdiarias.setStyleSheet(u"")
 
-        self.verticalLayout.addWidget(self.pbtarefas)
+        self.verticalLayout.addWidget(self.pbtarefasdiarias)
 
         self.pbgastos = QPushButton(self.lcontainer)
         self.pbgastos.setObjectName(u"pbgastos")
@@ -113,6 +113,7 @@ class Ui_ToDo(object):
         self.header = QFrame(self.maincontainer)
         self.header.setObjectName(u"header")
         self.header.setMaximumSize(QSize(16777215, 30))
+        self.header.setStyleSheet(u"")
         self.header.setFrameShape(QFrame.StyledPanel)
         self.header.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.header)
@@ -132,9 +133,13 @@ class Ui_ToDo(object):
         self.headerlblhorario.setObjectName(u"headerlblhorario")
         self.headerlblhorario.setMinimumSize(QSize(0, 15))
         self.headerlblhorario.setFont(font)
-        self.headerlblhorario.setStyleSheet(u"border:solid;\n"
+        self.headerlblhorario.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
 "border-width:1px;\n"
-"border-color:grey;")
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
         self.headerlblhorario.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.headerlblhorario)
@@ -143,9 +148,13 @@ class Ui_ToDo(object):
         self.headerlbldia.setObjectName(u"headerlbldia")
         self.headerlbldia.setMinimumSize(QSize(0, 15))
         self.headerlbldia.setFont(font)
-        self.headerlbldia.setStyleSheet(u"border:solid;\n"
+        self.headerlbldia.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
 "border-width:1px;\n"
-"border-color:grey;")
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
         self.headerlbldia.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.headerlbldia)
@@ -154,9 +163,13 @@ class Ui_ToDo(object):
         self.headerlbltemperatura.setObjectName(u"headerlbltemperatura")
         self.headerlbltemperatura.setMinimumSize(QSize(0, 15))
         self.headerlbltemperatura.setFont(font)
-        self.headerlbltemperatura.setStyleSheet(u"border:solid;\n"
+        self.headerlbltemperatura.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
 "border-width:1px;\n"
-"border-color:grey;")
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
         self.headerlbltemperatura.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.headerlbltemperatura)
@@ -242,29 +255,38 @@ class Ui_ToDo(object):
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 
+        self.label_12 = QLabel(self.frame)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet(u"background-color: rgb(190, 190, 200);")
+
+        self.verticalLayout_4.addWidget(self.label_12)
+
         self.label_5 = QLabel(self.frame)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setFont(font)
-        self.label_5.setStyleSheet(u"background-color: rgb(190, 190, 200);")
+        self.label_5.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
         self.verticalLayout_4.addWidget(self.label_5)
 
         self.label_6 = QLabel(self.frame)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setFont(font)
+        self.label_6.setStyleSheet(u"background-color: rgb(190, 190, 200);")
 
         self.verticalLayout_4.addWidget(self.label_6)
 
         self.label_7 = QLabel(self.frame)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setFont(font)
-        self.label_7.setStyleSheet(u"background-color: rgb(190, 190, 200);")
+        self.label_7.setStyleSheet(u"")
 
         self.verticalLayout_4.addWidget(self.label_7)
 
         self.label_8 = QLabel(self.frame)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setFont(font)
+        self.label_8.setStyleSheet(u"background-color: rgb(190, 190, 200);")
 
         self.verticalLayout_4.addWidget(self.label_8)
 
@@ -316,29 +338,38 @@ class Ui_ToDo(object):
 
         self.verticalLayout_8.addItem(self.verticalSpacer_3)
 
+        self.mainhometarefasdiarias = QLabel(self.frame_2)
+        self.mainhometarefasdiarias.setObjectName(u"mainhometarefasdiarias")
+        self.mainhometarefasdiarias.setFont(font)
+        self.mainhometarefasdiarias.setStyleSheet(u"background-color: rgb(190, 190, 200);")
+
+        self.verticalLayout_8.addWidget(self.mainhometarefasdiarias)
+
         self.mainhometarconcluida = QLabel(self.frame_2)
         self.mainhometarconcluida.setObjectName(u"mainhometarconcluida")
         self.mainhometarconcluida.setFont(font)
-        self.mainhometarconcluida.setStyleSheet(u"background-color: rgb(190, 190, 200);")
+        self.mainhometarconcluida.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
         self.verticalLayout_8.addWidget(self.mainhometarconcluida)
 
         self.mainhometarfaltando = QLabel(self.frame_2)
         self.mainhometarfaltando.setObjectName(u"mainhometarfaltando")
         self.mainhometarfaltando.setFont(font)
+        self.mainhometarfaltando.setStyleSheet(u"background-color: rgb(190, 190, 200);")
 
         self.verticalLayout_8.addWidget(self.mainhometarfaltando)
 
         self.mainhometaressencial = QLabel(self.frame_2)
         self.mainhometaressencial.setObjectName(u"mainhometaressencial")
         self.mainhometaressencial.setFont(font)
-        self.mainhometaressencial.setStyleSheet(u"background-color: rgb(190, 190, 200);")
+        self.mainhometaressencial.setStyleSheet(u"")
 
         self.verticalLayout_8.addWidget(self.mainhometaressencial)
 
         self.mainhometaressencialconluida = QLabel(self.frame_2)
         self.mainhometaressencialconluida.setObjectName(u"mainhometaressencialconluida")
         self.mainhometaressencialconluida.setFont(font)
+        self.mainhometaressencialconluida.setStyleSheet(u"background-color: rgb(190, 190, 200);")
 
         self.verticalLayout_8.addWidget(self.mainhometaressencialconluida)
 
@@ -381,8 +412,7 @@ class Ui_ToDo(object):
 "}\n"
 "\n"
 "QPushButton{\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color:rgb(150,150,150);\n"
+"background-color: rgb(190, 190, 200);\n"
 "color:rgb(0,0,0);\n"
 "border-style:solid;\n"
 "border-width:1px;\n"
@@ -402,18 +432,6 @@ class Ui_ToDo(object):
         self.maintarefasdiariasframetarefa.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.maintarefasdiariasframetarefa)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.maintarefasdiariaslbl = QLabel(self.maintarefasdiariasframetarefa)
-        self.maintarefasdiariaslbl.setObjectName(u"maintarefasdiariaslbl")
-        self.maintarefasdiariaslbl.setMinimumSize(QSize(25, 20))
-        self.maintarefasdiariaslbl.setFont(font)
-        self.maintarefasdiariaslbl.setStyleSheet(u"background-color: rgba(190, 190, 190, 234);\n"
-"border:solid;\n"
-"border-width:1px;\n"
-"")
-        self.maintarefasdiariaslbl.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_5.addWidget(self.maintarefasdiariaslbl)
-
         self.maintarefasdiariastab = QTableWidget(self.maintarefasdiariasframetarefa)
         self.maintarefasdiariastab.setObjectName(u"maintarefasdiariastab")
         self.maintarefasdiariastab.setStyleSheet(u"background-color: rgb(255, 255, 255);")
@@ -476,24 +494,24 @@ class Ui_ToDo(object):
 "")
         self.verticalLayout_7 = QVBoxLayout(self.mainpgcalendario)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.frame_4 = QFrame(self.mainpgcalendario)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_9 = QVBoxLayout(self.frame_4)
+        self.maincalendarioframe = QFrame(self.mainpgcalendario)
+        self.maincalendarioframe.setObjectName(u"maincalendarioframe")
+        self.maincalendarioframe.setFrameShape(QFrame.StyledPanel)
+        self.maincalendarioframe.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.maincalendarioframe)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.calendarWidget = QCalendarWidget(self.frame_4)
-        self.calendarWidget.setObjectName(u"calendarWidget")
-        self.calendarWidget.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.maincalendariocalendario = QCalendarWidget(self.maincalendarioframe)
+        self.maincalendariocalendario.setObjectName(u"maincalendariocalendario")
+        self.maincalendariocalendario.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "border:solid;\n"
 "border-width:1px;\n"
 "border-color:black;")
 
-        self.verticalLayout_9.addWidget(self.calendarWidget)
+        self.verticalLayout_9.addWidget(self.maincalendariocalendario)
 
 
-        self.verticalLayout_7.addWidget(self.frame_4)
+        self.verticalLayout_7.addWidget(self.maincalendarioframe)
 
         self.mainpages.addWidget(self.mainpgcalendario)
         self.mainpgtarefas = QWidget()
@@ -503,8 +521,7 @@ class Ui_ToDo(object):
 "}\n"
 "\n"
 "QPushButton{\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color:rgb(150,150,150);\n"
+"background-color: rgb(190, 190, 200);\n"
 "color:rgb(0,0,0);\n"
 "border-style:solid;\n"
 "border-width:1px;\n"
@@ -524,18 +541,103 @@ class Ui_ToDo(object):
         self.maintarefasframe.setFrameShadow(QFrame.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.maintarefasframe)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.maintarefaslbl = QLabel(self.maintarefasframe)
-        self.maintarefaslbl.setObjectName(u"maintarefaslbl")
-        self.maintarefaslbl.setMinimumSize(QSize(25, 20))
-        self.maintarefaslbl.setFont(font)
-        self.maintarefaslbl.setStyleSheet(u"background-color: rgba(190, 190, 190, 234);\n"
-"color: rgb(0, 0, 0);\n"
+        self.maintarefasframeframe = QFrame(self.maintarefasframe)
+        self.maintarefasframeframe.setObjectName(u"maintarefasframeframe")
+        self.maintarefasframeframe.setMinimumSize(QSize(0, 30))
+        self.maintarefasframeframe.setStyleSheet(u"QLabe {\n"
+"background-color: rgb(190, 190, 200);\n"
+"}l")
+        self.maintarefasframeframe.setFrameShape(QFrame.StyledPanel)
+        self.maintarefasframeframe.setFrameShadow(QFrame.Raised)
+        self.gridLayout_2 = QGridLayout(self.maintarefasframeframe)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.maintarefaslbldia = QLabel(self.maintarefasframeframe)
+        self.maintarefaslbldia.setObjectName(u"maintarefaslbldia")
+        self.maintarefaslbldia.setMinimumSize(QSize(25, 20))
+        self.maintarefaslbldia.setFont(font2)
+        self.maintarefaslbldia.setStyleSheet(u"QLabel{\n"
 "border:solid;\n"
 "border-width:1px;\n"
-"")
-        self.maintarefaslbl.setAlignment(Qt.AlignCenter)
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
+        self.maintarefaslbldia.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_12.addWidget(self.maintarefaslbl)
+        self.gridLayout_2.addWidget(self.maintarefaslbldia, 1, 0, 1, 1)
+
+        self.maintarefaslblmaxmin = QLabel(self.maintarefasframeframe)
+        self.maintarefaslblmaxmin.setObjectName(u"maintarefaslblmaxmin")
+        self.maintarefaslblmaxmin.setFont(font2)
+        self.maintarefaslblmaxmin.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
+        self.maintarefaslblmaxmin.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.maintarefaslblmaxmin, 1, 1, 1, 1)
+
+        self.maintarefaslbldescricao = QLabel(self.maintarefasframeframe)
+        self.maintarefaslbldescricao.setObjectName(u"maintarefaslbldescricao")
+        self.maintarefaslbldescricao.setFont(font2)
+        self.maintarefaslbldescricao.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
+        self.maintarefaslbldescricao.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.maintarefaslbldescricao, 1, 2, 1, 1)
+
+        self.label_2 = QLabel(self.maintarefasframeframe)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
+
+        self.label_13 = QLabel(self.maintarefasframeframe)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
+        self.label_13.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_13, 0, 1, 1, 1)
+
+        self.label_14 = QLabel(self.maintarefasframeframe)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setFont(font)
+        self.label_14.setStyleSheet(u"QLabel{\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:black;\n"
+"}")
+        self.label_14.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_14, 0, 2, 1, 1)
+
+
+        self.verticalLayout_12.addWidget(self.maintarefasframeframe)
 
         self.maintarefastab = QTableWidget(self.maintarefasframe)
         self.maintarefastab.setObjectName(u"maintarefastab")
@@ -543,8 +645,15 @@ class Ui_ToDo(object):
 
         self.verticalLayout_12.addWidget(self.maintarefastab)
 
+        self.maintarefaspbalterar = QPushButton(self.maintarefasframe)
+        self.maintarefaspbalterar.setObjectName(u"maintarefaspbalterar")
+        self.maintarefaspbalterar.setFont(font)
+
+        self.verticalLayout_12.addWidget(self.maintarefaspbalterar)
+
         self.maintarefaspbcadastrar = QPushButton(self.maintarefasframe)
         self.maintarefaspbcadastrar.setObjectName(u"maintarefaspbcadastrar")
+        self.maintarefaspbcadastrar.setFont(font)
 
         self.verticalLayout_12.addWidget(self.maintarefaspbcadastrar)
 
@@ -559,7 +668,7 @@ class Ui_ToDo(object):
 "}\n"
 "\n"
 "QPushButton{\n"
-"background-color:rgb(150,150,150);\n"
+"background-color: rgb(190, 190, 200);\n"
 "color:rgb(0,0,0);\n"
 "border-style:solid;\n"
 "border-width:1px;\n"
@@ -570,11 +679,23 @@ class Ui_ToDo(object):
 "background-color:rgb(255,255,255);\n"
 "color:rgb(0,0,0)\n"
 "}\n"
-"\n"
 "")
         self.verticalLayout_10 = QVBoxLayout(self.mainpgcadastrartarefa)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.mainctarefasframehorario_2 = QFrame(self.mainpgcadastrartarefa)
+        self.mainctarefasframecadastrar = QFrame(self.mainpgcadastrartarefa)
+        self.mainctarefasframecadastrar.setObjectName(u"mainctarefasframecadastrar")
+        self.mainctarefasframecadastrar.setFrameShape(QFrame.StyledPanel)
+        self.mainctarefasframecadastrar.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.mainctarefasframecadastrar)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.maincadastrartarefalbdia = QLabel(self.mainctarefasframecadastrar)
+        self.maincadastrartarefalbdia.setObjectName(u"maincadastrartarefalbdia")
+        self.maincadastrartarefalbdia.setFont(font)
+        self.maincadastrartarefalbdia.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_6.addWidget(self.maincadastrartarefalbdia)
+
+        self.mainctarefasframehorario_2 = QFrame(self.mainctarefasframecadastrar)
         self.mainctarefasframehorario_2.setObjectName(u"mainctarefasframehorario_2")
         self.mainctarefasframehorario_2.setMinimumSize(QSize(0, 30))
         self.mainctarefasframehorario_2.setMaximumSize(QSize(10000000, 16777215))
@@ -598,14 +719,8 @@ class Ui_ToDo(object):
         self.horizontalLayout_6.addWidget(self.mainctarefaslblhorariotimeEdit)
 
 
-        self.verticalLayout_10.addWidget(self.mainctarefasframehorario_2)
+        self.verticalLayout_6.addWidget(self.mainctarefasframehorario_2)
 
-        self.mainctarefasframecadastrar = QFrame(self.mainpgcadastrartarefa)
-        self.mainctarefasframecadastrar.setObjectName(u"mainctarefasframecadastrar")
-        self.mainctarefasframecadastrar.setFrameShape(QFrame.StyledPanel)
-        self.mainctarefasframecadastrar.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_6 = QVBoxLayout(self.mainctarefasframecadastrar)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.maincadastrartarefatextedit = QTextEdit(self.mainctarefasframecadastrar)
         self.maincadastrartarefatextedit.setObjectName(u"maincadastrartarefatextedit")
         self.maincadastrartarefatextedit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
@@ -619,19 +734,20 @@ class Ui_ToDo(object):
 
         self.verticalLayout_6.addWidget(self.maincadastrartarefarbessencial)
 
-        self.maincadastrartarefarbimportante = QRadioButton(self.mainctarefasframecadastrar)
-        self.maincadastrartarefarbimportante.setObjectName(u"maincadastrartarefarbimportante")
-        self.maincadastrartarefarbimportante.setFont(font)
-        self.maincadastrartarefarbimportante.setStyleSheet(u"background-color:rgb(255, 200, 155);")
-
-        self.verticalLayout_6.addWidget(self.maincadastrartarefarbimportante)
-
         self.maincadastrartarefarbsecudaria = QRadioButton(self.mainctarefasframecadastrar)
         self.maincadastrartarefarbsecudaria.setObjectName(u"maincadastrartarefarbsecudaria")
         self.maincadastrartarefarbsecudaria.setFont(font)
-        self.maincadastrartarefarbsecudaria.setStyleSheet(u"background-color: rgb(255, 255, 155);")
+        self.maincadastrartarefarbsecudaria.setStyleSheet(u"background-color:rgb(255, 200, 155);")
 
         self.verticalLayout_6.addWidget(self.maincadastrartarefarbsecudaria)
+
+        self.maincadastrartarefarbimportante = QRadioButton(self.mainctarefasframecadastrar)
+        self.maincadastrartarefarbimportante.setObjectName(u"maincadastrartarefarbimportante")
+        self.maincadastrartarefarbimportante.setFont(font)
+        self.maincadastrartarefarbimportante.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.maincadastrartarefarbimportante.setChecked(True)
+
+        self.verticalLayout_6.addWidget(self.maincadastrartarefarbimportante)
 
         self.maincadastrartarefapbsalvar = QPushButton(self.mainctarefasframecadastrar)
         self.maincadastrartarefapbsalvar.setObjectName(u"maincadastrartarefapbsalvar")
@@ -656,13 +772,13 @@ class Ui_ToDo(object):
         self.footer.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.footer)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label_2 = QLabel(self.footer)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(0, 20))
-        self.label_2.setFont(font)
-        self.label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.footerlblassinatura = QLabel(self.footer)
+        self.footerlblassinatura.setObjectName(u"footerlblassinatura")
+        self.footerlblassinatura.setMinimumSize(QSize(0, 20))
+        self.footerlblassinatura.setFont(font)
+        self.footerlblassinatura.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.horizontalLayout_2.addWidget(self.label_2)
+        self.horizontalLayout_2.addWidget(self.footerlblassinatura)
 
 
         self.verticalLayout_2.addWidget(self.footer)
@@ -683,7 +799,7 @@ class Ui_ToDo(object):
     def retranslateUi(self, ToDo):
         ToDo.setWindowTitle(QCoreApplication.translate("ToDo", u"ToDo", None))
         self.pbhome.setText(QCoreApplication.translate("ToDo", u"HOME", None))
-        self.pbtarefas.setText(QCoreApplication.translate("ToDo", u"TAREFAS DI\u00c1RIAS", None))
+        self.pbtarefasdiarias.setText(QCoreApplication.translate("ToDo", u"TAREFAS DI\u00c1RIAS", None))
         self.pbgastos.setText(QCoreApplication.translate("ToDo", u"GASTOS", None))
         self.pbcalendario.setText(QCoreApplication.translate("ToDo", u"CALENDARIO", None))
         self.pbtoogle.setText(QCoreApplication.translate("ToDo", u">>>", None))
@@ -695,6 +811,7 @@ class Ui_ToDo(object):
         self.label.setText(QCoreApplication.translate("ToDo", u"Temperatura :", None))
         self.label_3.setText(QCoreApplication.translate("ToDo", u"Cilma :", None))
         self.label_4.setText(QCoreApplication.translate("ToDo", u"Max / Min :", None))
+        self.label_12.setText(QCoreApplication.translate("ToDo", u"Tarefas di\u00e1rias :", None))
         self.label_5.setText(QCoreApplication.translate("ToDo", u"Tarefas conclu\u00eddas :", None))
         self.label_6.setText(QCoreApplication.translate("ToDo", u"Tarefas faltando :", None))
         self.label_7.setText(QCoreApplication.translate("ToDo", u"Tarefas essenciais :", None))
@@ -704,20 +821,27 @@ class Ui_ToDo(object):
         self.mainhometemperatura.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhomeclima.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhomemaxmin.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
+        self.mainhometarefasdiarias.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhometarconcluida.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhometarfaltando.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhometaressencial.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.mainhometaressencialconluida.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.label_9.setText(QCoreApplication.translate("ToDo", u"Percentual de conclus\u00e3o :", None))
-        self.maintarefasdiariaslbl.setText(QCoreApplication.translate("ToDo", u"20", None))
         self.maintarefasdiariaspbtarefaconcluida.setText(QCoreApplication.translate("ToDo", u"Tarefa conclu\u00edda", None))
-        self.maintarefaslbl.setText(QCoreApplication.translate("ToDo", u"DIA", None))
-        self.maintarefaspbcadastrar.setText(QCoreApplication.translate("ToDo", u"PushButton", None))
+        self.maintarefaslbldia.setText("")
+        self.maintarefaslblmaxmin.setText("")
+        self.maintarefaslbldescricao.setText("")
+        self.label_2.setText(QCoreApplication.translate("ToDo", u"Data", None))
+        self.label_13.setText(QCoreApplication.translate("ToDo", u"M\u00e1x - M\u00edn", None))
+        self.label_14.setText(QCoreApplication.translate("ToDo", u"Clima", None))
+        self.maintarefaspbalterar.setText(QCoreApplication.translate("ToDo", u"Alterar", None))
+        self.maintarefaspbcadastrar.setText(QCoreApplication.translate("ToDo", u"Cadastrar", None))
+        self.maincadastrartarefalbdia.setText(QCoreApplication.translate("ToDo", u"DIA", None))
         self.mainctarefaslblhorario.setText(QCoreApplication.translate("ToDo", u"Hor\u00e1rio", None))
         self.maincadastrartarefarbessencial.setText(QCoreApplication.translate("ToDo", u"Essencial", None))
-        self.maincadastrartarefarbimportante.setText(QCoreApplication.translate("ToDo", u"Importante", None))
         self.maincadastrartarefarbsecudaria.setText(QCoreApplication.translate("ToDo", u"Secund\u00e1ria", None))
+        self.maincadastrartarefarbimportante.setText(QCoreApplication.translate("ToDo", u"Normal", None))
         self.maincadastrartarefapbsalvar.setText(QCoreApplication.translate("ToDo", u"Salvar", None))
-        self.label_2.setText(QCoreApplication.translate("ToDo", u"(C) HENRIQUE - 2022", None))
+        self.footerlblassinatura.setText(QCoreApplication.translate("ToDo", u"(C) HENRIQUE - 2022", None))
     # retranslateUi
 
