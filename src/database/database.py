@@ -51,12 +51,40 @@ class Database():
             self.connection.commit()
             return True
         except:
-            return False
+            raise ValueError("Erro ao cadastrar tarefa")
+
+    def alterar_Tarefa(self,tarefa) -> bool:
+        cursor = self.connection.cursor()
+
+        try:
+            cursor.execute(f"UPDATE tarefas SET tarefa = '{tarefa[1]}', prioridade = '{tarefa[2]}', status = '{tarefa[3]}' WHERE date = '{tarefa[0]}'")
+            self.connection.commit()
+            return True
+        except:
+           raise ValueError("Erro ao alterar tarefa")
+
+    def concluir_Tarefa(self,data) -> bool:
+        cursor = self.connection.cursor()
+
+        try:
+            cursor.execute(f"UPDATE tarefas SET status = 1 WHERE date = '{data}'")
+            self.connection.commit()
+            return True
+        except:
+            raise ValueError("Erro ao alterar tarefa")
+
+    def excluir_Tarefa(self,data) -> bool:
+        cursor = self.connection.cursor()
+
+        cursor.execute(f"DELETE FROM tarefas WHERE date = '{data}'")
+        self.connection.commit()
 
 
 
 '''bd = Database()
 bd.connect()
-print(bd.listar_Tarefas('2022-01-20'))
+#print(bd.listar_Tarefas('2022-01-20'))
+
+bd.alterar_Tarefa(['2022-01-20 09:00', 'tarefa alterada', 1, 0])
 
 bd.close()'''

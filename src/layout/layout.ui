@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>530</width>
-    <height>520</height>
+    <width>550</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>520</height>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -728,7 +728,7 @@ color:rgb(0,0,0)
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar">
+                  <widget class="QProgressBar" name="mainhomeprogressbar">
                    <property name="font">
                     <font>
                      <weight>75</weight>
@@ -782,7 +782,7 @@ color:rgb(0,0,0)
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_5">
               <item>
-               <widget class="QFrame" name="maintarefasdiariasframetarefa">
+               <widget class="QFrame" name="maintarefasdiariasframe">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -798,10 +798,32 @@ color:rgb(0,0,0)
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="maintarefasdiariaspbtarefaconcluida">
-                   <property name="text">
-                    <string>Tarefa concluída</string>
+                  <widget class="QFrame" name="maintarefasdiariasframepb">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
                    </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QPushButton" name="maintarefasdiariaspbtarefaconcluida">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>10</y>
+                      <width>312</width>
+                      <height>15</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Tarefa concluída</string>
+                    </property>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
@@ -922,7 +944,7 @@ color:rgb(0,0,0)
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_12">
                  <item>
-                  <widget class="QFrame" name="maintarefasframeframe">
+                  <widget class="QFrame" name="maintarefasframeheader">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -940,90 +962,9 @@ background-color: rgb(190, 190, 200);
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QGridLayout" name="gridLayout_2">
-                    <item row="1" column="0">
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
                      <widget class="QLabel" name="maintarefaslbldia">
-                      <property name="minimumSize">
-                       <size>
-                        <width>25</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLabel{
-border:solid;
-border-width:1px;
-border-color:white;
-background-color: rgb(190, 190, 200);
-color:black;
-}</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QLabel" name="maintarefaslblmaxmin">
-                      <property name="font">
-                       <font>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLabel{
-border:solid;
-border-width:1px;
-border-color:white;
-background-color: rgb(190, 190, 200);
-color:black;
-}</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="2">
-                     <widget class="QLabel" name="maintarefaslbldescricao">
-                      <property name="font">
-                       <font>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLabel{
-border:solid;
-border-width:1px;
-border-color:white;
-background-color: rgb(190, 190, 200);
-color:black;
-}</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_2">
                       <property name="font">
                        <font>
                         <weight>75</weight>
@@ -1034,9 +975,6 @@ color:black;
                        <string notr="true">QLabel{
 border:solid;
 border-width:1px;
-border-color:white;
-background-color: rgb(190, 190, 200);
-color:black;
 }</string>
                       </property>
                       <property name="text">
@@ -1047,8 +985,8 @@ color:black;
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="label_13">
+                    <item>
+                     <widget class="QLabel" name="maintarefaslblmaxmin">
                       <property name="font">
                        <font>
                         <weight>75</weight>
@@ -1059,9 +997,6 @@ color:black;
                        <string notr="true">QLabel{
 border:solid;
 border-width:1px;
-border-color:white;
-background-color: rgb(190, 190, 200);
-color:black;
 }</string>
                       </property>
                       <property name="text">
@@ -1072,8 +1007,8 @@ color:black;
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="2">
-                     <widget class="QLabel" name="label_14">
+                    <item>
+                     <widget class="QLabel" name="maintarefaslbldescricao">
                       <property name="font">
                        <font>
                         <weight>75</weight>
@@ -1084,9 +1019,6 @@ color:black;
                        <string notr="true">QLabel{
 border:solid;
 border-width:1px;
-border-color:white;
-background-color: rgb(190, 190, 200);
-color:black;
 }</string>
                       </property>
                       <property name="text">
@@ -1108,29 +1040,84 @@ color:black;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="maintarefaspbalterar">
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
+                  <widget class="QFrame" name="maintarefasframepb">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
                    </property>
-                   <property name="text">
-                    <string>Alterar</string>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
                    </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_13">
+                    <item>
+                     <widget class="QPushButton" name="maintarefaspbalterar">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Alterar</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="maintarefaspbdeletar">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Deletar</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="maintarefaspbcadastrar">
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
+                  <widget class="QFrame" name="maintarefasframepbcadastrar">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
                    </property>
-                   <property name="text">
-                    <string>Cadastrar</string>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item>
+                     <widget class="QPushButton" name="maintarefaspbcadastrar">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Cadastrar</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -1234,9 +1221,18 @@ color:rgb(0,0,0)
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTimeEdit" name="mainctarefaslblhorariotimeEdit">
+                     <widget class="QTimeEdit" name="maincadastrartarefashorariotimeEdit">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="currentSection">
+                       <enum>QDateTimeEdit::HourSection</enum>
                       </property>
                      </widget>
                     </item>
@@ -1283,7 +1279,7 @@ color:rgb(0,0,0)
                   </widget>
                  </item>
                  <item>
-                  <widget class="QRadioButton" name="maincadastrartarefarbimportante">
+                  <widget class="QRadioButton" name="maincadastrartarefarbnormal">
                    <property name="font">
                     <font>
                      <weight>75</weight>
@@ -1302,16 +1298,65 @@ color:rgb(0,0,0)
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="maincadastrartarefapbsalvar">
-                   <property name="font">
-                    <font>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
+                  <widget class="QFrame" name="maincadastrartarefafrapbalterar">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
                    </property>
-                   <property name="text">
-                    <string>Salvar</string>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <item>
+                     <widget class="QPushButton" name="maincadastrartarefapbalterar">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Alterar</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="maincadastrartarefafrapbsalvar">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <item>
+                     <widget class="QPushButton" name="maincadastrartarefapbsalvar">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Salvar</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
