@@ -58,7 +58,7 @@ color:rgb(0,0,0);
      <widget class="QFrame" name="lcontainer">
       <property name="maximumSize">
        <size>
-        <width>130</width>
+        <width>0</width>
         <height>16777215</height>
        </size>
       </property>
@@ -852,19 +852,423 @@ color:rgb(0,0,0)
 }
 </string>
              </property>
-             <widget class="QTableWidget" name="tableWidget">
-              <property name="geometry">
-               <rect>
-                <x>70</x>
-                <y>70</y>
-                <width>256</width>
-                <height>192</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
-              </property>
-             </widget>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QFrame" name="maingastosframe">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_20">
+                 <item>
+                  <widget class="QTableWidget" name="maingastostab">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="maingastosframeframe">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>180</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_22">
+                    <item>
+                     <widget class="QFrame" name="maingastosframelbl">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>100</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>100</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_19">
+                       <item>
+                        <widget class="QLabel" name="label_2">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border:solid;
+border-color:black;
+border-width:1px;
+background-color: rgb(190, 190, 200);</string>
+                         </property>
+                         <property name="text">
+                          <string>Quantidade de gastos</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="maingastoslblquantidadedegastos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_13">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border:solid;
+border-color:black;
+border-width:1px;
+background-color: rgb(190, 190, 200);</string>
+                         </property>
+                         <property name="text">
+                          <string>Valor total</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="maingastoslbltotalgastos">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="maingastosframepb">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_18">
+                       <item>
+                        <widget class="QFrame" name="maingastosframepbframe">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_21">
+                          <item>
+                           <widget class="QPushButton" name="maingastospbdeletar">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <weight>75</weight>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{
+background-color: rgb(190, 190, 200);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}</string>
+                            </property>
+                            <property name="text">
+                             <string>Deletar</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="maingastospbcadastrar">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <weight>75</weight>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{
+background-color: rgb(190, 190, 200);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}</string>
+                            </property>
+                            <property name="text">
+                             <string>Cadastrar</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="mainpgcadastrargasto">
+             <layout class="QVBoxLayout" name="verticalLayout_25">
+              <item>
+               <widget class="QFrame" name="maincadastrargastoframe">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_24">
+                 <item>
+                  <widget class="QFrame" name="frame_4">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_2">
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="label_14">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">border:solid;
+color: rgb(0, 0, 0);
+border-color:black;
+border-width:1px;
+background-color: rgb(190, 190, 200);</string>
+                      </property>
+                      <property name="text">
+                       <string>Gasto :</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="label_15">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">border:solid;
+color: rgb(0, 0, 0);
+border-color:black;
+border-width:1px;
+background-color: rgb(190, 190, 200);</string>
+                      </property>
+                      <property name="text">
+                       <string>Valor :</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLineEdit" name="maincadastrargastoslevalor">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+border:solid;
+border-width:1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="label_16">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">border:solid;
+color: rgb(0, 0, 0);
+border-color:black;
+border-width:1px;
+background-color: rgb(190, 190, 200);</string>
+                      </property>
+                      <property name="text">
+                       <string>Data de Vencimento :</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QLineEdit" name="maincadastrargastolegasto">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+border:solid;
+border-width:1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QDateEdit" name="maincadastrargastodata">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:solid;
+border-width:1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="maincadastrargastoframepb">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_23">
+                    <item>
+                     <widget class="QPushButton" name="maincadastrargastopbsalvar">
+                      <property name="font">
+                       <font>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+background-color: rgb(190, 190, 200);
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
+color:rgb(0,0,0)
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Salvar</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="mainpgcalendario">
              <property name="styleSheet">

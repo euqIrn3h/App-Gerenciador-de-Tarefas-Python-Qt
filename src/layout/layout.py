@@ -15,12 +15,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCalendarWidget, QDateTimeEdit, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QMainWindow, QProgressBar, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QStackedWidget, QTableWidget,
-    QTableWidgetItem, QTextEdit, QTimeEdit, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QCalendarWidget, QDateEdit, QDateTimeEdit,
+    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QProgressBar,
+    QPushButton, QRadioButton, QSizePolicy, QSpacerItem,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QTimeEdit, QVBoxLayout, QWidget)
 
 class Ui_ToDo(object):
     def setupUi(self, ToDo):
@@ -65,7 +65,7 @@ class Ui_ToDo(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.lcontainer = QFrame(self.centralwidget)
         self.lcontainer.setObjectName(u"lcontainer")
-        self.lcontainer.setMaximumSize(QSize(130, 16777215))
+        self.lcontainer.setMaximumSize(QSize(0, 16777215))
         self.lcontainer.setFrameShape(QFrame.StyledPanel)
         self.lcontainer.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.lcontainer)
@@ -474,11 +474,254 @@ class Ui_ToDo(object):
 "color:rgb(0,0,0)\n"
 "}\n"
 "")
-        self.tableWidget = QTableWidget(self.mainpggastos)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(70, 70, 256, 192))
-        self.tableWidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.verticalLayout_17 = QVBoxLayout(self.mainpggastos)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.maingastosframe = QFrame(self.mainpggastos)
+        self.maingastosframe.setObjectName(u"maingastosframe")
+        self.maingastosframe.setFrameShape(QFrame.StyledPanel)
+        self.maingastosframe.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_20 = QVBoxLayout(self.maingastosframe)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.maingastostab = QTableWidget(self.maingastosframe)
+        self.maingastostab.setObjectName(u"maingastostab")
+        self.maingastostab.setMinimumSize(QSize(0, 0))
+        self.maingastostab.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+
+        self.verticalLayout_20.addWidget(self.maingastostab)
+
+        self.maingastosframeframe = QFrame(self.maingastosframe)
+        self.maingastosframeframe.setObjectName(u"maingastosframeframe")
+        self.maingastosframeframe.setMaximumSize(QSize(16777215, 180))
+        self.maingastosframeframe.setFrameShape(QFrame.StyledPanel)
+        self.maingastosframeframe.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_22 = QVBoxLayout(self.maingastosframeframe)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.maingastosframelbl = QFrame(self.maingastosframeframe)
+        self.maingastosframelbl.setObjectName(u"maingastosframelbl")
+        self.maingastosframelbl.setMinimumSize(QSize(0, 100))
+        self.maingastosframelbl.setMaximumSize(QSize(16777215, 100))
+        self.maingastosframelbl.setFrameShape(QFrame.StyledPanel)
+        self.maingastosframelbl.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.maingastosframelbl)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.label_2 = QLabel(self.maingastosframelbl)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 20))
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet(u"border:solid;\n"
+"border-color:black;\n"
+"border-width:1px;\n"
+"background-color: rgb(190, 190, 200);")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_2)
+
+        self.maingastoslblquantidadedegastos = QLabel(self.maingastosframelbl)
+        self.maingastoslblquantidadedegastos.setObjectName(u"maingastoslblquantidadedegastos")
+        self.maingastoslblquantidadedegastos.setMinimumSize(QSize(0, 20))
+        self.maingastoslblquantidadedegastos.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.maingastoslblquantidadedegastos.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.maingastoslblquantidadedegastos)
+
+        self.label_13 = QLabel(self.maingastosframelbl)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setMinimumSize(QSize(0, 20))
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet(u"border:solid;\n"
+"border-color:black;\n"
+"border-width:1px;\n"
+"background-color: rgb(190, 190, 200);")
+        self.label_13.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_13)
+
+        self.maingastoslbltotalgastos = QLabel(self.maingastosframelbl)
+        self.maingastoslbltotalgastos.setObjectName(u"maingastoslbltotalgastos")
+        self.maingastoslbltotalgastos.setMinimumSize(QSize(0, 20))
+        self.maingastoslbltotalgastos.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.maingastoslbltotalgastos.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.maingastoslbltotalgastos)
+
+
+        self.verticalLayout_22.addWidget(self.maingastosframelbl)
+
+        self.maingastosframepb = QFrame(self.maingastosframeframe)
+        self.maingastosframepb.setObjectName(u"maingastosframepb")
+        self.maingastosframepb.setFrameShape(QFrame.StyledPanel)
+        self.maingastosframepb.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.maingastosframepb)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.maingastosframepbframe = QFrame(self.maingastosframepb)
+        self.maingastosframepbframe.setObjectName(u"maingastosframepbframe")
+        self.maingastosframepbframe.setMaximumSize(QSize(16777215, 50))
+        self.maingastosframepbframe.setFrameShape(QFrame.StyledPanel)
+        self.maingastosframepbframe.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.maingastosframepbframe)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.maingastospbdeletar = QPushButton(self.maingastosframepbframe)
+        self.maingastospbdeletar.setObjectName(u"maingastospbdeletar")
+        self.maingastospbdeletar.setMinimumSize(QSize(0, 20))
+        self.maingastospbdeletar.setFont(font)
+        self.maingastospbdeletar.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}")
+
+        self.verticalLayout_21.addWidget(self.maingastospbdeletar)
+
+        self.maingastospbcadastrar = QPushButton(self.maingastosframepbframe)
+        self.maingastospbcadastrar.setObjectName(u"maingastospbcadastrar")
+        self.maingastospbcadastrar.setMinimumSize(QSize(0, 20))
+        self.maingastospbcadastrar.setFont(font)
+        self.maingastospbcadastrar.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}")
+
+        self.verticalLayout_21.addWidget(self.maingastospbcadastrar)
+
+
+        self.verticalLayout_18.addWidget(self.maingastosframepbframe)
+
+
+        self.verticalLayout_22.addWidget(self.maingastosframepb)
+
+
+        self.verticalLayout_20.addWidget(self.maingastosframeframe)
+
+
+        self.verticalLayout_17.addWidget(self.maingastosframe)
+
         self.mainpages.addWidget(self.mainpggastos)
+        self.mainpgcadastrargasto = QWidget()
+        self.mainpgcadastrargasto.setObjectName(u"mainpgcadastrargasto")
+        self.verticalLayout_25 = QVBoxLayout(self.mainpgcadastrargasto)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.maincadastrargastoframe = QFrame(self.mainpgcadastrargasto)
+        self.maincadastrargastoframe.setObjectName(u"maincadastrargastoframe")
+        self.maincadastrargastoframe.setFrameShape(QFrame.StyledPanel)
+        self.maincadastrargastoframe.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_24 = QVBoxLayout(self.maincadastrargastoframe)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.frame_4 = QFrame(self.maincadastrargastoframe)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.gridLayout_2 = QGridLayout(self.frame_4)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.label_14 = QLabel(self.frame_4)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setFont(font)
+        self.label_14.setStyleSheet(u"border:solid;\n"
+"color: rgb(0, 0, 0);\n"
+"border-color:black;\n"
+"border-width:1px;\n"
+"background-color: rgb(190, 190, 200);")
+
+        self.gridLayout_2.addWidget(self.label_14, 1, 0, 1, 1)
+
+        self.label_15 = QLabel(self.frame_4)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setFont(font)
+        self.label_15.setStyleSheet(u"border:solid;\n"
+"color: rgb(0, 0, 0);\n"
+"border-color:black;\n"
+"border-width:1px;\n"
+"background-color: rgb(190, 190, 200);")
+
+        self.gridLayout_2.addWidget(self.label_15, 2, 0, 1, 1)
+
+        self.maincadastrargastoslevalor = QLineEdit(self.frame_4)
+        self.maincadastrargastoslevalor.setObjectName(u"maincadastrargastoslevalor")
+        self.maincadastrargastoslevalor.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:black;")
+
+        self.gridLayout_2.addWidget(self.maincadastrargastoslevalor, 2, 1, 1, 1)
+
+        self.label_16 = QLabel(self.frame_4)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setFont(font)
+        self.label_16.setStyleSheet(u"border:solid;\n"
+"color: rgb(0, 0, 0);\n"
+"border-color:black;\n"
+"border-width:1px;\n"
+"background-color: rgb(190, 190, 200);")
+
+        self.gridLayout_2.addWidget(self.label_16, 3, 0, 1, 1)
+
+        self.maincadastrargastolegasto = QLineEdit(self.frame_4)
+        self.maincadastrargastolegasto.setObjectName(u"maincadastrargastolegasto")
+        self.maincadastrargastolegasto.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:black;")
+
+        self.gridLayout_2.addWidget(self.maincadastrargastolegasto, 1, 1, 1, 1)
+
+        self.maincadastrargastodata = QDateEdit(self.frame_4)
+        self.maincadastrargastodata.setObjectName(u"maincadastrargastodata")
+        self.maincadastrargastodata.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"border:solid;\n"
+"border-width:1px;\n"
+"border-color:black;")
+
+        self.gridLayout_2.addWidget(self.maincadastrargastodata, 3, 1, 1, 1)
+
+
+        self.verticalLayout_24.addWidget(self.frame_4)
+
+        self.maincadastrargastoframepb = QFrame(self.maincadastrargastoframe)
+        self.maincadastrargastoframepb.setObjectName(u"maincadastrargastoframepb")
+        self.maincadastrargastoframepb.setFrameShape(QFrame.StyledPanel)
+        self.maincadastrargastoframepb.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_23 = QVBoxLayout(self.maincadastrargastoframepb)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.maincadastrargastopbsalvar = QPushButton(self.maincadastrargastoframepb)
+        self.maincadastrargastopbsalvar.setObjectName(u"maincadastrargastopbsalvar")
+        self.maincadastrargastopbsalvar.setFont(font)
+        self.maincadastrargastopbsalvar.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(190, 190, 200);\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color:rgb(255,255,255);\n"
+"color:rgb(0,0,0)\n"
+"}")
+
+        self.verticalLayout_23.addWidget(self.maincadastrargastopbsalvar)
+
+
+        self.verticalLayout_24.addWidget(self.maincadastrargastoframepb)
+
+
+        self.verticalLayout_25.addWidget(self.maincadastrargastoframe)
+
+        self.mainpages.addWidget(self.mainpgcadastrargasto)
         self.mainpgcalendario = QWidget()
         self.mainpgcalendario.setObjectName(u"mainpgcalendario")
         self.mainpgcalendario.setStyleSheet(u"*{\n"
@@ -838,6 +1081,16 @@ class Ui_ToDo(object):
         self.mainhometaressencialconluida.setText(QCoreApplication.translate("ToDo", u"TextLabel", None))
         self.label_9.setText(QCoreApplication.translate("ToDo", u"Percentual de conclus\u00e3o :", None))
         self.maintarefasdiariaspbtarefaconcluida.setText(QCoreApplication.translate("ToDo", u"Tarefa conclu\u00edda", None))
+        self.label_2.setText(QCoreApplication.translate("ToDo", u"Quantidade de gastos", None))
+        self.maingastoslblquantidadedegastos.setText("")
+        self.label_13.setText(QCoreApplication.translate("ToDo", u"Valor total", None))
+        self.maingastoslbltotalgastos.setText("")
+        self.maingastospbdeletar.setText(QCoreApplication.translate("ToDo", u"Deletar", None))
+        self.maingastospbcadastrar.setText(QCoreApplication.translate("ToDo", u"Cadastrar", None))
+        self.label_14.setText(QCoreApplication.translate("ToDo", u"Gasto :", None))
+        self.label_15.setText(QCoreApplication.translate("ToDo", u"Valor :", None))
+        self.label_16.setText(QCoreApplication.translate("ToDo", u"Data de Vencimento :", None))
+        self.maincadastrargastopbsalvar.setText(QCoreApplication.translate("ToDo", u"Salvar", None))
         self.maintarefaslbldia.setText(QCoreApplication.translate("ToDo", u"Data", None))
         self.maintarefaslblmaxmin.setText(QCoreApplication.translate("ToDo", u"M\u00e1x - M\u00edn", None))
         self.maintarefaslbldescricao.setText(QCoreApplication.translate("ToDo", u"Clima", None))

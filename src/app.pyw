@@ -1,5 +1,6 @@
 from PySide6 import QtCore
-from PySide6.QtCore import QCoreApplication, QPoint, QSize, QTime
+from PySide6.QtCore import QCoreApplication, QDate, QPoint, QSize, QTime
+from PySide6.QtGui import QCloseEvent
 from PySide6.QtWidgets import *
 from layout.layout import  Ui_ToDo
 import sys
@@ -39,6 +40,8 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.pbtarefasdiarias.clicked.connect(self.tarefas_diarias)
 
         self.pbgastos.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpggastos))
+        self.pbgastos.clicked.connect(self.gastos)
+
         self.pbcalendario.clicked.connect(lambda: self.mainpages.setCurrentWidget(self.mainpgcalendario))
 
         self.maincalendariocalendario.clicked.connect(self.calendario)
@@ -54,7 +57,14 @@ class MainJanela(Ui_ToDo,QMainWindow):
 
         self.maincadastrartarefapbsalvar.clicked.connect(self.cadastrar_tarefa)
         self.maincadastrartarefapbalterar.clicked.connect(self.alterar_tarefa)
+
+        self.maingastostab.itemSelectionChanged.connect(self.mostrar_botao_gastos)
         
+        self.maingastospbdeletar.clicked.connect(self.deletar_gasto)
+
+        self.maingastospbcadastrar.clicked.connect(self.mostar_cadastro_gasto)
+        self.maincadastrargastolegasto.textEdited.connect(self.mostrar_botao_gasto_salvar)
+        self.maincadastrargastopbsalvar.clicked.connect(self.insere_gasto)
 
     def set_Header(self) -> None:
         self.headerlbldia.setText(self.data)
@@ -87,7 +97,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.mainhomemaxmin.setText("{} ℃ / {} ℃".format(self.api[3][0]['max'],self.api[3][0]['min']))
 
 
-        tarefas = self.bd.listar_Tarefas('2022-01-20')   #str(datetime.date.today())
+        tarefas = self.bd.listar_Tarefas(str(datetime.date.today()))   #str(datetime.date.today())
         essencial=0
         concluidas=0
         essencialconcluida=0
@@ -99,26 +109,30 @@ class MainJanela(Ui_ToDo,QMainWindow):
                 if tarefas[i][3] == 1:
                     essencialconcluida+=1
 
-        if concluidas/(len(tarefas)) < 0.3:
-            self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
-        elif concluidas/(len(tarefas)) < 0.5:
-            self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
+        if len(tarefas):
+            if concluidas/(len(tarefas)) < 0.3:
+                self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
+            elif concluidas/(len(tarefas)) < 0.5:
+                self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
 
-        if essencialconcluida/essencial < 0.3:
-            self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
-        elif essencialconcluida/essencial < 0.5:
-            self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
+            if essencialconcluida/essencial < 0.3:
+                self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
+            elif essencialconcluida/essencial < 0.5:
+                self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
 
         self.mainhometarefasdiarias.setText(str(len(tarefas)))
         self.mainhometarconcluida.setText(str(concluidas))
         self.mainhometarfaltando.setText(str(len(tarefas)-concluidas))
         self.mainhometaressencial.setText(str(essencial))
         self.mainhometaressencialconluida.setText(str(essencialconcluida))
-        self.mainhomeprogressbar.setValue((concluidas/(len(tarefas)))*100)
-    
+        if len(tarefas):
+            self.mainhomeprogressbar.setValue((concluidas/(len(tarefas)))*100)
+        else:
+            self.mainhomeprogressbar.setValue(100)
+
     def tarefas_diarias(self) -> None:
         tabela = self.maintarefasdiariastab
-        tarefas = self.bd.listar_Tarefas('2022-01-20')#str(datetime.date.today())
+        tarefas = self.bd.listar_Tarefas(str(datetime.date.today()))
         
         self.maintarefasdiariasframepb.close()
 
@@ -131,10 +145,10 @@ class MainJanela(Ui_ToDo,QMainWindow):
         tabela.setColumnCount(1)
         tabela.setHorizontalHeaderItem(0,QTableWidgetItem('Tarefa Diária'))
         
+
         linha = 0
         for i in range(len(tarefas)):
             if tarefas[i][3] == 0:
-                #tabela.insertRow(linha)
 
                 tarefa=QTextEdit()
                 tarefa.setMaximumHeight(60)            
@@ -158,7 +172,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
     def tarefa_concluida(self) -> None:
 
         tabela = self.maintarefasdiariastab
-        data = '2022-01-20'+" "+str(tabela.verticalHeaderItem(tabela.currentRow()).text())
+        data = str(datetime.date.today())+" "+str(tabela.verticalHeaderItem(tabela.currentRow()).text())
         
         self.bd.concluir_Tarefa(data)
         self.tarefas_diarias()
@@ -168,7 +182,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
 
         if data >= str(datetime.date.today()): 
 
-            tarefas = self.bd.listar_Tarefas('2022-01-20')#str(datetime.date.today())
+            tarefas = self.bd.listar_Tarefas(data)
             faltando = 0
             self.mainpages.setCurrentWidget(self.mainpgtarefas)
             self.maintarefasframepb.close()
@@ -203,6 +217,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
             tabela.setColumnCount(1)
             tabela.setHorizontalHeaderItem(0,QTableWidgetItem('Tarefa Diária'))
             
+
             linha = 0
             for i in range(len(tarefas)):
                 if tarefas[i][3] == 0:
@@ -222,10 +237,10 @@ class MainJanela(Ui_ToDo,QMainWindow):
                     linha+=1
             tabela.resizeColumnsToContents()
 
-    def mostrar_botao_alterar(self):
+    def mostrar_botao_alterar(self) -> None:
         self.maintarefasframepb.show()
 
-    def mostrar_cadastrar_tarefa(self):
+    def mostrar_cadastrar_tarefa(self) -> None:
         self.mainpages.setCurrentWidget(self.mainpgcadastrartarefa)
 
         self.maincadastrartarefashorariotimeEdit.setReadOnly(False)
@@ -249,7 +264,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
 
         self.maincadastrartarefalbdia.setText(data)
     
-    def mostrar_alterar_tarefa(self):
+    def mostrar_alterar_tarefa(self) -> None:
         self.mainpages.setCurrentWidget(self.mainpgcadastrartarefa)
 
         tabela = self.maintarefastab
@@ -276,7 +291,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
 
         self.maincadastrartarefalbdia.setText(data)
 
-    def cadastrar_tarefa(self):
+    def cadastrar_tarefa(self) -> None:
     
         self.maincadastrartarefatextedit.selectAll()
         self.maincadastrartarefatextedit.copy()
@@ -311,7 +326,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
             self.maincadastrartarefatextedit.setText("")
             self.tarefas(self.maincadastrartarefalbdia.text())
     
-    def alterar_tarefa(self):
+    def alterar_tarefa(self) -> None:
         
         self.maincadastrartarefatextedit.selectAll()
         self.maincadastrartarefatextedit.copy()
@@ -345,17 +360,17 @@ class MainJanela(Ui_ToDo,QMainWindow):
             self.maincadastrartarefatextedit.setText("")
             self.tarefas(self.maincadastrartarefalbdia.text())
 
-    def exclui_tarefa(self):
+    def exclui_tarefa(self) -> None:
         
         data = self.data_format_sql(self.maincalendariocalendario.selectedDate())
         tabela = self.maintarefastab
         self.bd.excluir_Tarefa(data+" "+str(tabela.verticalHeaderItem(tabela.currentRow()).text()))
         self.tarefas(self.data_format_sql(self.maincalendariocalendario.selectedDate()))
 
-    def calendario(self):
+    def calendario(self) -> None:
       self.tarefas(self.data_format_sql(self.maincalendariocalendario.selectedDate()))
 
-    def data_format_sql(self,data):
+    def data_format_sql(self,data) -> None:
         if data.day() < 10:
             dia = f'0{str(data.day())}'
         else:
@@ -367,6 +382,60 @@ class MainJanela(Ui_ToDo,QMainWindow):
             mes = data.month()
 
         return f"{str(data.year())}-{mes}-{dia}"
+
+    def gastos(self) -> None:
+        self.mainpages.setCurrentWidget(self.mainpggastos)
+
+        tabela = self.maingastostab
+        gastos = self.bd.listar_Gastos()
+
+        self.maingastosframepb.close()
+
+        tabela.setRowCount(len(gastos))
+        tabela.setColumnCount(3)
+        tabela.setHorizontalHeaderItem(0,QTableWidgetItem('Gasto'))
+        tabela.setHorizontalHeaderItem(1,QTableWidgetItem('Valor'))
+        tabela.setHorizontalHeaderItem(2,QTableWidgetItem('Vencimento'))
+
+        valortotal=0
+        for i in range(len(gastos)):
+            tabela.setItem(i,0,QTableWidgetItem(str(gastos[i][0])))
+            tabela.setItem(i,1,QTableWidgetItem(str(gastos[i][1])))
+            tabela.setItem(i,2,QTableWidgetItem(str(gastos[i][2])))
+            valortotal += int(gastos[i][1])            
+
+        self.maingastoslblquantidadedegastos.setText(str(len(gastos)))
+        self.maingastoslbltotalgastos.setText(str(valortotal)+" R$")
+
+    def mostrar_botao_gastos(self) -> None:
+        self.maingastosframepb.show()
+
+    def mostar_cadastro_gasto(self) -> None:
+        
+        self.mainpages.setCurrentWidget(self.mainpgcadastrargasto)
+        self.maincadastrargastolegasto.setText("")
+        self.maincadastrargastoslevalor.setText("")
+        self.maincadastrargastoframepb.close()
+
+    def mostrar_botao_gasto_salvar(self) -> None:
+        if self.maincadastrargastolegasto.text():
+            self.maincadastrargastoframepb.show()
+        else:
+            self.maincadastrargastoframepb.close()
+
+    def insere_gasto(self) -> None:
+        data = str(self.maincadastrargastodata.date().day())+"-"+str(self.maincadastrargastodata.date().month())+"-"+str(self.maincadastrargastodata.date().year())
+        self.bd.insere_Gasto([self.maincadastrargastolegasto.text(),self.maincadastrargastoslevalor.text(),data])
+        
+        self.gastos()
+
+    def deletar_gasto(self) -> None:
+        tabela= self.maingastostab
+        gasto = tabela.item(tabela.row(tabela.currentItem()),0).text()
+
+        self.bd.excluir_Gasto(gasto)
+        self.gastos()
+
 
 
 
