@@ -1,16 +1,15 @@
 from PySide6 import QtCore
-from PySide6.QtCore import QCoreApplication, QDate, QPoint, QSize, QTime
-from PySide6.QtGui import QCloseEvent
+from PySide6.QtCore import QTime
 from PySide6.QtWidgets import *
 from layout.layout import  Ui_ToDo
 import sys
 import datetime
 from api import *
-import sqlite3 as sq
 from database.database import *
 import pyperclip as pc
-import os
-
+import time
+import sched
+import threading
 
 class MainJanela(Ui_ToDo,QMainWindow):
     def __init__(self) -> None:
@@ -25,6 +24,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.data = str(self.data[8:]+"/"+self.data[5:7]+"/"+self.data[:4])
         self.hora = str(datetime.datetime.now().time())
         self.hora = self.hora[:5]
+        self.contador = 59
         self.home()
         self.set_Header()
         
@@ -66,10 +66,16 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.maincadastrargastolegasto.textEdited.connect(self.mostrar_botao_gasto_salvar)
         self.maincadastrargastopbsalvar.clicked.connect(self.insere_gasto)
 
+
     def set_Header(self) -> None:
+        self.contador +=1
         self.headerlbldia.setText(self.data)
-        self.headerlblhorario.setText(self.hora)
-        self.headerlbltemperatura.setText(str(self.api[1])+" ℃")
+        self.headerlblhorario.setText(time.strftime("%X")[:5])
+
+        if self.contador == 60:
+            self.contador = 0
+            api = Clima()
+            self.headerlbltemperatura.setText(str(api[1])+" ℃")
         
     def left_Menu(self) -> None:
         x = self.lcontainer.width()
@@ -143,7 +149,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
 
         tabela.setRowCount(faltando)
         tabela.setColumnCount(1)
-        tabela.setHorizontalHeaderItem(0,QTableWidgetItem('Tarefa Diária'))
+        tabela.setHorizontalHeaderItem(0,QTableWidgetItem('Tarefas Diária'))
         
 
         linha = 0
@@ -402,7 +408,7 @@ class MainJanela(Ui_ToDo,QMainWindow):
             tabela.setItem(i,0,QTableWidgetItem(str(gastos[i][0])))
             tabela.setItem(i,1,QTableWidgetItem(str(gastos[i][1])))
             tabela.setItem(i,2,QTableWidgetItem(str(gastos[i][2])))
-            valortotal += int(gastos[i][1])            
+            valortotal += float(gastos[i][1])            
 
         self.maingastoslblquantidadedegastos.setText(str(len(gastos)))
         self.maingastoslbltotalgastos.setText(str(valortotal)+" R$")
@@ -437,13 +443,53 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.gastos()
 
 
+#Declarando o app globalmente para manipular ele em paralelo
+app = QApplication(sys.argv)
+window = MainJanela()
+
+
+#Funcoes de evento de tempo paaralela a execucao prinmcipal
+def repeat_at_interval(scheduler, event, interval=60, add_n=10, start_t=None) -> None:
+    """Adds 'add_n' more calls to "event" at each "interval" seconds"""
+    # Unix timestamp
+    if start_t is None:
+        t = time.time()
+        # round to next interval -
+        t = t - (t % interval) + interval
+    else:
+        t = start_t
+
+    for i in range(add_n):
+        scheduler.enterabs(t, 0, event)
+        t += interval
+
+    # Schedule call to self, to add "add_n" extra events
+    # when these are over:
+    scheduler.enterabs(t - interval, 0, repeat_at_interval, kwargs={
+        "scheduler": scheduler,
+        "event": event,
+        "interval": interval,
+        "add_n": add_n,
+        "start_t": t
+        })
+
+def aciona_header() -> None:
+    window.set_Header()
+
+def main() -> None:
+    scheduler  = sched.scheduler(time.time, time.sleep)
+    repeat_at_interval(scheduler, aciona_header, interval=60)
+    thread = threading.Thread(target=scheduler.run)
+    thread.start()
+       
+    window.show()
+    app.exec()
+    os._exit(0)
 
 
 if __name__ == "__main__":
+    main()
     
-    app = QApplication(sys.argv)
-    window = MainJanela()
-    window.show()
-    app.exec()
+
 
     
