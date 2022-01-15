@@ -66,7 +66,6 @@ class MainJanela(Ui_ToDo,QMainWindow):
         self.maincadastrargastolegasto.textEdited.connect(self.mostrar_botao_gasto_salvar)
         self.maincadastrargastopbsalvar.clicked.connect(self.insere_gasto)
 
-
     def set_Header(self) -> None:
         self.contador +=1
         self.headerlbldia.setText(self.data)
@@ -115,16 +114,20 @@ class MainJanela(Ui_ToDo,QMainWindow):
                 if tarefas[i][3] == 1:
                     essencialconcluida+=1
 
+        self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,255,255)}")
+        self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(190,190,200)}")
+
         if len(tarefas):
+            if concluidas/(len(tarefas)) <= 0.5:
+                self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
             if concluidas/(len(tarefas)) < 0.3:
                 self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
-            elif concluidas/(len(tarefas)) < 0.5:
-                self.mainhometarconcluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
-
-            if essencialconcluida/essencial < 0.3:
-                self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
-            elif essencialconcluida/essencial < 0.5:
+        
+            if essencialconcluida/essencial < 0.5:
                 self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,150,0)}")
+            if essencialconcluida/essencial <= 0.3:
+                self.mainhometaressencialconluida.setStyleSheet("QLabel {background-color:rgb(255,50,0);color:white;}")
+        
 
         self.mainhometarefasdiarias.setText(str(len(tarefas)))
         self.mainhometarconcluida.setText(str(concluidas))
