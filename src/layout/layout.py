@@ -266,7 +266,7 @@ class Ui_ToDo(object):
         self.label_5 = QLabel(self.frame)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setFont(font)
-        self.label_5.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.label_5.setStyleSheet(u"")
 
         self.verticalLayout_4.addWidget(self.label_5)
 
@@ -349,7 +349,7 @@ class Ui_ToDo(object):
         self.mainhometarconcluida = QLabel(self.frame_2)
         self.mainhometarconcluida.setObjectName(u"mainhometarconcluida")
         self.mainhometarconcluida.setFont(font)
-        self.mainhometarconcluida.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.mainhometarconcluida.setStyleSheet(u"")
 
         self.verticalLayout_8.addWidget(self.mainhometarconcluida)
 
